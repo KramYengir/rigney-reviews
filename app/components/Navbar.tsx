@@ -2,6 +2,7 @@
 import Link from "next/link";
 import { IoMenu, IoCloseOutline } from "react-icons/io5";
 import { useState } from "react";
+import ThemeSwitch from "./ThemeSwitch";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -19,7 +20,7 @@ const Navbar = () => {
           {isOpen ? <IoCloseOutline /> : <IoMenu />}
         </button>
         {isOpen && (
-          <ul className="fixed inset-0 py-24 flex flex-col gap-6 items-center bg-teal-100">
+          <ul className="fixed inset-0 py-24 flex flex-col gap-6 items-center">
             <li>
               <Link href={"/"} onClick={toggleMenu}>
                 MasterPieces
@@ -35,6 +36,9 @@ const Navbar = () => {
                 About Me
               </Link>
             </li>
+            <li>
+              <ThemeSwitch />
+            </li>
           </ul>
         )}
         {/* Desktop Nav */}
@@ -47,6 +51,9 @@ const Navbar = () => {
           </li>
           <li>
             <Link href={"/"}>About Me</Link>
+          </li>
+          <li>
+            <ThemeSwitch />
           </li>
         </ul>
       </nav>
