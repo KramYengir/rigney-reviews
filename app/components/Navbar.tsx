@@ -1,3 +1,4 @@
+"use client";
 import Link from "next/link";
 import { IoMenu, IoCloseOutline } from "react-icons/io5";
 import { useState } from "react";
