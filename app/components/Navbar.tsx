@@ -14,7 +14,9 @@ const Navbar = () => {
   return (
     <header>
       <nav className="flex justify-between mx-auto max-w-5xl px-6 py-4">
-        <Link href={"/"}>R.Reviews</Link>
+        <Link href={"/"} className="text-2xl tracking-wider">
+          <span className=" text-scooter-600 font-bold">R</span>Reviews
+        </Link>
         {/* Mobile Nav */}
         <button className="md:hidden z-10" onClick={toggleMenu}>
           {isOpen ? <IoCloseOutline /> : <IoMenu />}
