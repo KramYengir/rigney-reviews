@@ -1,7 +1,7 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import { useTheme } from "next-themes";
-import { MdDarkMode } from "react-icons/md";
+import { FaRegMoon } from "react-icons/fa";
 import { CiLight } from "react-icons/ci";
 
 const ThemeSwitch = () => {
@@ -13,9 +13,13 @@ const ThemeSwitch = () => {
     setMounted(true);
   }, []);
 
+  if (!mounted) {
+    return null;
+  }
+
   return (
     <button onClick={() => setTheme(theme === "light" ? "dark" : "light")}>
-      {theme === "light" ? <MdDarkMode /> : <CiLight />}
+      {theme === "light" ? <FaRegMoon /> : <CiLight />}
     </button>
   );
 };
