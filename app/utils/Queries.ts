@@ -29,6 +29,20 @@ const SINGLE_QUERY = `*[_type == "review" && slug.current == $slug] {
   format 
 }`;
 
+const LATEST_QUERY = `*[_type == "review"] | order(publishedAt desc) [0] {
+  _id,
+  title,
+  slug,
+  rating,
+  excerpt,
+  body,
+  poster,
+  author-> {name},
+  "tagNames": tags[]->name,
+  publishedAt,
+  format 
+}`;
+
 const FILM_QUERY = `**[_type == "review" && format == 'film']{
   _id,
   title,
@@ -88,6 +102,10 @@ export async function getAllReviews() {
 }
 export async function getSingleReview(slug: string) {
   const review = await client.fetch(SINGLE_QUERY, { slug });
+  return review;
+}
+export async function getLatestReview() {
+  const review = await client.fetch(LATEST_QUERY);
   return review;
 }
 export async function getFilmReviews() {
