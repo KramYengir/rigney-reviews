@@ -3,6 +3,7 @@ import { client } from "@/sanity/lib/client";
 const ALL_QUERY = `*[_type == "review"] {
   _id,
   title,
+  slug,
   rating,
   excerpt,
   body,
@@ -16,6 +17,7 @@ const ALL_QUERY = `*[_type == "review"] {
 const FILM_QUERY = `**[_type == "review" && format == 'film']{
   _id,
   title,
+  slug,
   rating,
   excerpt,
   body,
@@ -28,6 +30,7 @@ const FILM_QUERY = `**[_type == "review" && format == 'film']{
 const TV_QUERY = `*[_type == "review" && format == 'tv']{
   _id,
   title,
+  slug,
   rating,
   excerpt,
   body,
@@ -40,6 +43,7 @@ const TV_QUERY = `*[_type == "review" && format == 'tv']{
 const MASTERPIECES_QUERY = `*[_type == "review" && count(tags[@->name in ["masterpiece"]]) > 0 ]{
   _id,
   title,
+  slug,
   rating,
   excerpt,
   body,
@@ -51,6 +55,7 @@ const MASTERPIECES_QUERY = `*[_type == "review" && count(tags[@->name in ["maste
 }`;
 const HIDDEN_GEMS_QUERY = `*[_type == "review" && count(tags[@->name in ["hidden gem"]]) > 0 ]{
   _id,
+  slug,
   title,
   rating,
   excerpt,
