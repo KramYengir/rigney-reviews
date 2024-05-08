@@ -8,7 +8,14 @@ interface Review {
   format: "movie" | "tv_show";
   excerpt: string;
   body: Block[];
-  poster: Image;
+  poster: {
+    _type: string;
+    alt: string;
+    asset: {
+      _ref: string;
+      _type: string;
+    };
+  };
   author: Author;
   tags: Tag[];
   publishedAt: string;

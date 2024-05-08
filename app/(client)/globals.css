@@ -1,3 +1,12 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.card-gradient {
+  background: linear-gradient(
+    180deg,
+    #2020208c 0%,
+    #2020202a 50%,
+    #2020208c 100%
+  );
+}
