@@ -1,6 +1,9 @@
 interface Review {
   _id: string;
   title: string;
+  slug: {
+    current: string;
+  };
   rating: number;
   format: "movie" | "tv_show";
   excerpt: string;
