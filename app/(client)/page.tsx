@@ -1,5 +1,5 @@
 import Review from "../interfaces/ReviewType";
-import * as fetcher from "../utils/Qeuries";
+import * as fetcher from "../utils/Queries";
 
 const Home = async () => {
   const reviews: Review[] = await fetcher.getAllReviews();
