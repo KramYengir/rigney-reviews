@@ -112,7 +112,6 @@ export const review = {
       title: "Tags",
       type: "array",
       of: [{ type: "reference", to: [{ type: "tag" }] }],
-      validation: (Rule: Rule) => Rule.required().error("Tags are required"),
     },
     {
       name: "publishedAt",

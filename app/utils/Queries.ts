@@ -11,9 +11,24 @@ const ALL_QUERY = `*[_type == "review"] {
   author-> {name},
   "tagNames": tags[]->name,
   publishedAt,
-  format // add the format field here
+  format 
 }
 `;
+
+const SINGLE_QUERY = `*[_type == "review" && slug.current == $slug] {
+  _id,
+  title,
+  slug,
+  rating,
+  excerpt,
+  body,
+  poster,
+  author-> {name},
+  "tagNames": tags[]->name,
+  publishedAt,
+  format 
+}`;
+
 const FILM_QUERY = `**[_type == "review" && format == 'film']{
   _id,
   title,
@@ -25,7 +40,7 @@ const FILM_QUERY = `**[_type == "review" && format == 'film']{
   author-> {name},
   "tagNames": tags[]->name,
   publishedAt,
-  format // add the format field here
+  format 
 }`;
 const TV_QUERY = `*[_type == "review" && format == 'tv']{
   _id,
@@ -38,7 +53,7 @@ const TV_QUERY = `*[_type == "review" && format == 'tv']{
   author-> {name},
   "tagNames": tags[]->name,
   publishedAt,
-  format // add the format field here
+  format 
 }`;
 const MASTERPIECES_QUERY = `*[_type == "review" && count(tags[@->name in ["masterpiece"]]) > 0 ]{
   _id,
@@ -51,7 +66,7 @@ const MASTERPIECES_QUERY = `*[_type == "review" && count(tags[@->name in ["maste
   author-> {name},
   "tagNames": tags[]->name,
   publishedAt,
-  format // add the format field here
+  format 
 }`;
 const HIDDEN_GEMS_QUERY = `*[_type == "review" && count(tags[@->name in ["hidden gem"]]) > 0 ]{
   _id,
@@ -64,12 +79,16 @@ const HIDDEN_GEMS_QUERY = `*[_type == "review" && count(tags[@->name in ["hidden
   author-> {name},
   "tagNames": tags[]->name,
   publishedAt,
-  format // add the format field here
+  format 
 }`;
 
 export async function getAllReviews() {
   const reviews = await client.fetch(ALL_QUERY);
   return reviews;
+}
+export async function getSingleReview(slug: string) {
+  const review = await client.fetch(SINGLE_QUERY, { slug });
+  return review;
 }
 export async function getFilmReviews() {
   const reviews = await client.fetch(FILM_QUERY);
