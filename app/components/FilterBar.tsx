@@ -1,12 +1,36 @@
+"use client";
 import Link from "next/link";
-import React from "react";
+import { useState, useEffect } from "react";
 
 const FilterBar = () => {
+  // State to track the current path
+  const [currentPath, setCurrentPath] = useState("");
+
+  // Update the current path state when component mounts
+  useEffect(() => {
+    setCurrentPath(window.location.pathname);
+  }, []);
+
   return (
-    <div className="flex  justify-end gap-1">
-      <Link href={"/"}>All</Link>
-      <Link href={"/film"}>Film</Link>
-      <Link href={"/tv"}>TV</Link>
+    <div className="flex  justify-end gap-2">
+      <Link
+        href={"/"}
+        className={`rounded-b-md px-2 py-1 ${currentPath === "/" ? " bg-scooter-600 text-scooter-50" : ""}`}
+      >
+        All
+      </Link>
+      <Link
+        href={"/film"}
+        className={`rounded-b-md px-2 py-1 ${currentPath === "/film" ? " bg-scooter-600 text-scooter-50" : ""}`}
+      >
+        Film
+      </Link>
+      <Link
+        href={"/tv"}
+        className={`rounded-b-md px-2 py-1 ${currentPath === "/tv" ? " bg-scooter-600 text-scooter-50" : ""}`}
+      >
+        TV
+      </Link>
     </div>
   );
 };

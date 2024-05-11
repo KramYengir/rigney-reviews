@@ -13,7 +13,7 @@ const Home = async () => {
     <>
       <FilterBar />
       <LatestReview />
-      <hr className=" border-b border-slate-300 mt-10" />
+      <hr className=" border-b border-slate-300 my-10" />
       <div className="grid gap-4">
         {reviews?.length > 0 &&
           reviews.map((review) => (
