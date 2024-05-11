@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Open_Sans } from "next/font/google";
+import { Roboto } from "next/font/google";
 import "./globals.css";
 import Navbar from "../components/Navbar";
 import Provider from "../utils/Provider";
@@ -10,9 +10,10 @@ export const metadata: Metadata = {
 };
 
 //👇 Configure our font object
-const openSans = Open_Sans({
-  subsets: ["latin"],
+const roboto = Roboto({
   display: "swap",
+  weight: ["100", "300", "400", "500", "700"],
+  subsets: ["latin"],
 });
 
 export default function RootLayout({
@@ -23,7 +24,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${openSans.className} h-full bg-dark-jungle-green-50 text-slate-900 dark:bg-slate-900 dark:text-amber-50`}
+        className={`${roboto.className} h-full bg-neutral-50 text-slate-900 dark:bg-scooter-900 dark:text-scooter-50`}
       >
         <Provider>
           <Navbar />

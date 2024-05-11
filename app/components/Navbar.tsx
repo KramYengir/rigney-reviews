@@ -13,16 +13,16 @@ const Navbar = () => {
 
   return (
     <header>
-      <nav className="flex justify-between mx-auto max-w-5xl px-6 py-4">
+      <nav className="flex justify-between mx-auto max-w-5xl px-6 py-4 border-b border-slate-300">
         <Link href={"/"} className="text-2xl tracking-wider">
           <span className=" text-scooter-600 font-bold">R</span>Reviews
         </Link>
         {/* Mobile Nav */}
-        <button className="md:hidden z-10" onClick={toggleMenu}>
+        <button className="md:hidden z-50 text-xl" onClick={toggleMenu}>
           {isOpen ? <IoCloseOutline /> : <IoMenu />}
         </button>
         {isOpen && (
-          <ul className="fixed inset-0 py-24 flex flex-col gap-6 items-center">
+          <ul className="fixed inset-0 z-40 py-24 flex flex-col gap-6 items-center bg-slate-50 text-scooter-900 dark:bg-scooter-900 dark:text-scooter-50">
             <li>
               <Link href={"/"} onClick={toggleMenu}>
                 MasterPieces
