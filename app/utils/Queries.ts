@@ -15,7 +15,7 @@ const ALL_QUERY = `*[_type == "review"] {
 }
 `;
 
-const SINGLE_QUERY = `*[_type == "review" && slug.current == $slug] {
+const SINGLE_QUERY = `*[_type == "review" && slug.current == $slug][0] {
   _id,
   title,
   slug,
