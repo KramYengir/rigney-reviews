@@ -1,10 +1,35 @@
 import React from "react";
-import { getLatestReview } from "../utils/Queries";
+import {
+  getLatestFilmReview,
+  getLatestTvReview,
+  getLatestReview,
+} from "../utils/Queries";
 import { urlForImage } from "@/sanity/lib/image";
 import Link from "next/link";
 
-const LatestReview = async () => {
-  const latestReview = await getLatestReview();
+interface Props {
+  format?: string;
+}
+
+const LatestReview = async ({ format }: Props) => {
+  let latestReview;
+
+  // Check if the format prop is valid
+  if (format && !["tv", "film"].includes(format)) {
+    throw new Error(`Invalid format prop: ${format}`);
+  }
+
+  switch (format) {
+    case "tv":
+      latestReview = await getLatestTvReview();
+      break;
+    case "film":
+      latestReview = await getLatestFilmReview();
+      break;
+    default:
+      latestReview = await getLatestReview();
+  }
+
   const posterUrl = urlForImage(latestReview?.poster);
 
   return (

@@ -1,13 +1,12 @@
 import Review from "../interfaces/ReviewType";
-import * as fetcher from "../utils/Queries";
+import { getAllReviews } from "../utils/Queries";
 import ReviewCard from "../components/ReviewCard";
 import LatestReview from "../components/LatestReview";
 
 export const revalidate = 3600; //re fetch data every hour
 
 const Home = async () => {
-  const reviews: Review[] = await fetcher.getAllReviews();
-  console.log(reviews);
+  const reviews: Review[] = await getAllReviews();
 
   return (
     <>

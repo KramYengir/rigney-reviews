@@ -1,6 +1,6 @@
 import { client } from "@/sanity/lib/client";
 
-const ALL_QUERY = `*[_type == "review"] {
+const ALL_QUERY = `*[_type == "review"] | order(publishedAt desc) {
   _id,
   title,
   slug,
@@ -43,7 +43,7 @@ const LATEST_QUERY = `*[_type == "review"] | order(publishedAt desc) [0] {
   format 
 }`;
 
-const FILM_QUERY = `**[_type == "review" && format == 'film']{
+const LATEST_TV_QUERY = `*[_type == "review" && format == 'tv'] | order(publishedAt desc) [0] {
   _id,
   title,
   slug,
@@ -56,7 +56,35 @@ const FILM_QUERY = `**[_type == "review" && format == 'film']{
   publishedAt,
   format 
 }`;
-const TV_QUERY = `*[_type == "review" && format == 'tv']{
+
+const LATEST_FILM_QUERY = `*[_type == "review" && format == 'film'] | order(publishedAt desc) [0] {
+  _id,
+  title,
+  slug,
+  rating,
+  excerpt,
+  body,
+  poster,
+  author-> {name},
+  "tagNames": tags[]->name,
+  publishedAt,
+  format 
+}`;
+
+const FILM_QUERY = `*[_type == "review" && format == 'film'] | order(publishedAt desc){
+  _id,
+  title,
+  slug,
+  rating,
+  excerpt,
+  body,
+  poster,
+  author-> {name},
+  "tagNames": tags[]->name,
+  publishedAt,
+  format 
+}`;
+const TV_QUERY = `*[_type == "review" && format == 'tv'] | order(publishedAt desc){
   _id,
   title,
   slug,
@@ -106,6 +134,14 @@ export async function getSingleReview(slug: string) {
 }
 export async function getLatestReview() {
   const review = await client.fetch(LATEST_QUERY);
+  return review;
+}
+export async function getLatestTvReview() {
+  const review = await client.fetch(LATEST_TV_QUERY);
+  return review;
+}
+export async function getLatestFilmReview() {
+  const review = await client.fetch(LATEST_FILM_QUERY);
   return review;
 }
 export async function getFilmReviews() {
