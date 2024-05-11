@@ -1,3 +1,4 @@
+import FilterBar from "@/app/components/FilterBar";
 import LatestReview from "@/app/components/LatestReview";
 import ReviewCard from "@/app/components/ReviewCard";
 import Review from "@/app/interfaces/ReviewType";
@@ -11,6 +12,7 @@ const FilmReviewsPage = async () => {
 
   return (
     <>
+      <FilterBar />
       <LatestReview format="film" />
       <hr className=" border-b border-slate-300 my-10" />
       <div className="grid gap-4">
