@@ -3,6 +3,7 @@ import { getAllReviews } from "../utils/Queries";
 import ReviewCard from "../components/ReviewCard";
 import LatestReview from "../components/LatestReview";
 import FilterBar from "../components/FilterBar";
+import Reviews from "../components/Reviews";
 
 export const revalidate = 3600; //re fetch data every hour
 
@@ -13,13 +14,8 @@ const Home = async () => {
     <>
       <FilterBar />
       <LatestReview />
-      <hr className=" border-b border-slate-300 my-10" />
-      <div className="grid gap-4">
-        {reviews?.length > 0 &&
-          reviews.map((review) => (
-            <ReviewCard key={review._id} review={review} />
-          ))}
-      </div>
+      {/* <hr className=" border-b border-slate-300 my-10" /> */}
+      <Reviews reviews={reviews} format="All" />
     </>
   );
 };

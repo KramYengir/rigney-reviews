@@ -1,6 +1,7 @@
 import FilterBar from "@/app/components/FilterBar";
 import LatestReview from "@/app/components/LatestReview";
 import ReviewCard from "@/app/components/ReviewCard";
+import Reviews from "@/app/components/Reviews";
 import Review from "@/app/interfaces/ReviewType";
 import { getReviewsByFormat } from "@/app/utils/Queries";
 import { error } from "console";
@@ -23,12 +24,7 @@ const FilterPage = async ({ params }: Props) => {
       <FilterBar />
       <LatestReview format={params.format} />
       <hr className=" border-b border-slate-300 my-10" />
-      <div className="grid gap-4">
-        {reviews?.length > 0 &&
-          reviews.map((review) => (
-            <ReviewCard key={review._id} review={review} />
-          ))}
-      </div>
+      <Reviews reviews={reviews} format={params.format} />
     </>
   );
 };
