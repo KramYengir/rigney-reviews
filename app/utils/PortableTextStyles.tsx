@@ -23,21 +23,21 @@ export const PortableTextStyles = {
     },
     h2: ({ children }: any) => {
       return (
-        <h2 className="text-2xl font-semibold text-scooter-900 dark:text-scooter-50">
+        <h2 className="text-xl font-semibold text-scooter-900 dark:text-scooter-50">
           {children}
         </h2>
       );
     },
     h3: ({ children }: any) => {
       return (
-        <h3 className="text-xl font-semibold text-scooter-900 dark:text-scooter-50">
+        <h3 className="text-lg font-semibold text-scooter-900 dark:text-scooter-50">
           {children}
         </h3>
       );
     },
     h4: ({ children }: any) => {
       return (
-        <h4 className="text-lg font-semibold text-scooter-900 dark:text-scooter-50">
+        <h4 className=" font-semibold text-scooter-900 dark:text-scooter-50">
           {children}
         </h4>
       );

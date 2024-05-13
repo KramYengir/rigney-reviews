@@ -3,6 +3,7 @@ import { Roboto } from "next/font/google";
 import "./globals.css";
 import Navbar from "../components/Navbar";
 import Provider from "../utils/Provider";
+import Footer from "../components/Footer";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -29,6 +30,7 @@ export default function RootLayout({
         <Provider>
           <Navbar />
           <main className=" max-w-5xl mx-auto px-6">{children}</main>
+          <Footer />
         </Provider>
       </body>
     </html>

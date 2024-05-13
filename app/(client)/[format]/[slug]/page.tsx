@@ -18,7 +18,7 @@ const page = async ({ params }: Props) => {
   const posterUrl = urlForImage(review?.poster);
 
   return (
-    <article className="grid py-4">
+    <article className="grid pt-4 pb-10">
       <Link href={"/"} className="mb-12">
         &#x2039; Back
       </Link>

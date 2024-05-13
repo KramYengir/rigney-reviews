@@ -10,7 +10,7 @@ interface ReviewsProps {
 const Reviews = ({ reviews, format }: ReviewsProps) => {
   return (
     <section className="grid gap-4 py-10">
-      <h2 className=" uppercase font-medium pb-1 border-b border-slate-300 mb-4">
+      <h2 className=" uppercase tracking-wider font-medium pb-1 border-b border-slate-300 mb-4">
         {format} Reviews
       </h2>
       {reviews?.length > 0 &&

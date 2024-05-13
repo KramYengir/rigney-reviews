@@ -27,9 +27,9 @@ const ProductionInfo = async ({ title }: { title: string }) => {
         <li>
           <span className="font-light">Genre:</span> {details.Genre}
         </li>
-        <li>
+        {/* <li>
           <span className="font-light">Plot</span>: {details.Plot}
-        </li>
+        </li> */}
       </ul>
     </div>
   );
