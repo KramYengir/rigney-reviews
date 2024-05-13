@@ -40,6 +40,7 @@ interface Image {
 }
 
 interface Author {
+  name: string;
   _ref: string;
   _type: string;
 }

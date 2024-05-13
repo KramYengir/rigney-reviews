@@ -44,7 +44,9 @@ const LatestReview = async ({ format }: Props) => {
         <img src={posterUrl} alt={latestReview.poster.alt} />
       </div>
       <div className="flex justify-between">
-        <h3 className=" text-lg">{latestReview.title}</h3>
+        <h3 className=" text-lg text-scooter-800 dark:text-scooter-50">
+          {latestReview.title}
+        </h3>
         <p>{latestReview.rating}</p>
       </div>
       <small className="uppercase text-xs font-light mb-2">
