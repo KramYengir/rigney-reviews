@@ -6,7 +6,7 @@ import RigneymadeLogo from "./RigneymadeLogo";
 
 const Footer = () => {
   return (
-    <footer className="flex justify-center items-center p-4 border-t border-slate-300">
+    <footer className="flex justify-center items-center p-2 border-t border-slate-300">
       <Link
         href={"https://www.rigneymade.com/"}
         className="flex items-center font-sans"
