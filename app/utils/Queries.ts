@@ -1,6 +1,7 @@
 import { client } from "@/sanity/lib/client";
 
-const ALL_QUERY = `*[_type == "review"] | order(publishedAt desc) {
+/** UPDATED - FETCH ALL BUT LATEST... */
+const ALL_QUERY = `*[_type == "review"] | order(publishedAt desc)[1..-1] {
   _id,
   title,
   slug,
@@ -43,7 +44,8 @@ const LATEST_QUERY = `*[_type == "review"] | order(publishedAt desc) [0] {
   format 
 }`;
 
-const FILTER_BY_FORMAT_QUERY = `*[_type == "review" && format == $format] | order(publishedAt desc) {
+/** UPDATED - FETCH ALL BUT LATEST... */
+const FILTER_BY_FORMAT_QUERY = `*[_type == "review" && format == $format] | order(publishedAt desc)[1..-1]  {
   _id,
   title,
   slug,
@@ -85,6 +87,7 @@ const LATEST_FILM_QUERY = `*[_type == "review" && format == 'film'] | order(publ
   format 
 }`;
 
+/** UPDATED - CURRENTLY REPLACED BY FILTER_BY_FORMAT... */
 const FILM_QUERY = `*[_type == "review" && format == 'film'] | order(publishedAt desc){
   _id,
   title,
@@ -98,6 +101,8 @@ const FILM_QUERY = `*[_type == "review" && format == 'film'] | order(publishedAt
   publishedAt,
   format 
 }`;
+
+/** UPDATED - CURRENTLY REPLACED BY FILTER_BY_FORMAT... */
 const TV_QUERY = `*[_type == "review" && format == 'tv'] | order(publishedAt desc){
   _id,
   title,
