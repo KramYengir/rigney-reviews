@@ -43,6 +43,20 @@ const LATEST_QUERY = `*[_type == "review"] | order(publishedAt desc) [0] {
   format 
 }`;
 
+const FILTER_BY_FORMAT_QUERY = `*[_type == "review" && format == $format] | order(publishedAt desc) {
+  _id,
+  title,
+  slug,
+  rating,
+  excerpt,
+  body,
+  poster,
+  author-> {name},
+  "tagNames": tags[]->name,
+  publishedAt,
+  format 
+}`;
+
 const LATEST_TV_QUERY = `*[_type == "review" && format == 'tv'] | order(publishedAt desc) [0] {
   _id,
   title,
@@ -135,6 +149,10 @@ export async function getSingleReview(slug: string) {
 export async function getLatestReview() {
   const review = await client.fetch(LATEST_QUERY);
   return review;
+}
+export async function getReviewsByFormat(format: string) {
+  const reviews = await client.fetch(FILTER_BY_FORMAT_QUERY, { format });
+  return reviews;
 }
 export async function getLatestTvReview() {
   const review = await client.fetch(LATEST_TV_QUERY);
