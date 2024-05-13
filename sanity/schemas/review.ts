@@ -103,7 +103,7 @@ export const review = {
     {
       name: "author",
       title: "Author",
-      type: "array",
+      type: "reference",
       to: [{ type: "author" }],
       validation: (Rule: Rule) => Rule.required().error("Author is required"),
     },
