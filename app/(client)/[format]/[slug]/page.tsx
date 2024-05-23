@@ -7,6 +7,7 @@ import { PortableText } from "@portabletext/react";
 import ProductionInfo from "@/app/components/ProductionInfo";
 import { PortableTextStyles } from "@/app/utils/PortableTextStyles";
 import { notFound } from "next/navigation";
+import BackButton from "@/app/components/BackButton";
 
 interface Props {
   params: {
@@ -25,9 +26,7 @@ const page = async ({ params }: Props) => {
 
   return (
     <article className="grid pt-4 pb-10">
-      <Link href={"/"} className="mb-12">
-        &#x2039; Back
-      </Link>
+      <BackButton />
       <h2 className=" text-2xl font-semibold text-scooter-800 dark:text-scooter-50">
         {review?.title}
       </h2>
