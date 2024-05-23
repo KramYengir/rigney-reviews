@@ -6,6 +6,7 @@ import { urlForImage } from "@/sanity/lib/image";
 import { PortableText } from "@portabletext/react";
 import ProductionInfo from "@/app/components/ProductionInfo";
 import { PortableTextStyles } from "@/app/utils/PortableTextStyles";
+import { notFound } from "next/navigation";
 
 interface Props {
   params: {
@@ -15,6 +16,11 @@ interface Props {
 
 const page = async ({ params }: Props) => {
   const review: Review = await getSingleReview(params.slug);
+
+  // ERROR HANDLING FOR NON-EXISTENT REVIEWS - 404
+  if (!review) {
+    notFound();
+  }
   const posterUrl = urlForImage(review?.poster);
 
   return (
