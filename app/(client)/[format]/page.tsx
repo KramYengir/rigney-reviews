@@ -1,3 +1,4 @@
+import { notFound } from "next/navigation";
 import FilterBar from "@/app/components/FilterBar";
 import LatestReview from "@/app/components/LatestReview";
 import ReviewCard from "@/app/components/ReviewCard";
@@ -15,7 +16,14 @@ interface Props {
   };
 }
 
+const FORMATS = ["tv", "film"];
+
 const FilterPage = async ({ params }: Props) => {
+  // ERROR HANDLING FOR BAD ROUTES
+  if (!FORMATS.includes(params.format)) {
+    return notFound();
+  }
+
   let reviews: Review[] = await getReviewsByFormat(params.format);
   console.log("FORMATTTTTT:", params.format);
 

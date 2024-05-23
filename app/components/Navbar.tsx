@@ -24,17 +24,17 @@ const Navbar = () => {
         {isOpen && (
           <ul className="fixed inset-0 z-40 py-24 flex flex-col gap-6 items-center bg-slate-50 text-scooter-900 dark:bg-scooter-900 dark:text-scooter-50">
             <li>
-              <Link href={"/"} onClick={toggleMenu}>
+              <Link href={"/masterpieces"} onClick={toggleMenu}>
                 MasterPieces
               </Link>
             </li>
             <li>
-              <Link href={"/"} onClick={toggleMenu}>
+              <Link href={"/hidden-gems"} onClick={toggleMenu}>
                 Hidden Gems
               </Link>
             </li>
             <li>
-              <Link href={"/"} onClick={toggleMenu}>
+              <Link href={"/about"} onClick={toggleMenu}>
                 About Me
               </Link>
             </li>
