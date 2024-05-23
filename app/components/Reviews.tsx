@@ -4,7 +4,7 @@ import ReviewCard from "./ReviewCard";
 
 interface ReviewsProps {
   reviews: Review[];
-  format: string;
+  format?: string;
 }
 
 const Reviews = ({ reviews, format }: ReviewsProps) => {
