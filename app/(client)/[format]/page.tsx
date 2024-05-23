@@ -31,7 +31,6 @@ const FilterPage = async ({ params }: Props) => {
     <>
       <FilterBar />
       <LatestReview format={params.format} />
-      <hr className=" border-b border-slate-300 my-10" />
       <Reviews reviews={reviews} format={params.format} />
     </>
   );

@@ -25,11 +25,11 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${roboto.className} h-full bg-neutral-50 text-scooter-900 dark:bg-scooter-900 dark:text-scooter-50`}
+        className={`${roboto.className} flex flex-col  min-h-screen bg-neutral-50 text-scooter-900 dark:bg-scooter-900 dark:text-scooter-50`}
       >
         <Provider>
           <Navbar />
-          <main className=" max-w-5xl mx-auto px-6 pb-8">{children}</main>
+          <main className="flex-1 max-w-5xl mx-auto px-6 pb-8">{children}</main>
           <Footer />
         </Provider>
       </body>
