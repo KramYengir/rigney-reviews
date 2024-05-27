@@ -14,7 +14,6 @@ const Home = async () => {
     <>
       <FilterBar />
       <LatestReview />
-      {/* <hr className=" border-b border-slate-300 my-10" /> */}
       <Reviews reviews={reviews} format="All" />
     </>
   );
