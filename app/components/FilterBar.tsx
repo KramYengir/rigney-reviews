@@ -12,22 +12,22 @@ const FilterBar = () => {
   }, []);
 
   return (
-    <div className="flex  justify-end gap-2 text-center">
+    <div className="flex justify-end gap-2 text-center text-sm">
       <Link
         href={"/"}
-        className={`rounded-b-md px-2 py-1 min-w-12 shadow-sm shadow-scooter-950 dark:shadow-scooter-50 ${currentPath === "/" ? " bg-scooter-600 text-scooter-50 dark:bg-scooter-50 dark:text-scooter-900" : ""}`}
+        className={`rounded-b-md px-2 py-1 min-w-12 shadow-sm shadow-scooter-950 dark:shadow-scooter-700 ${currentPath === "/" ? " bg-scooter-600 text-scooter-50 dark:bg-scooter-50 dark:text-scooter-900" : ""} hover:bg-scooter-600 hover:text-scooter-50 dark:hover:bg-scooter-50 dark:hover:text-scooter-900`}
       >
         All
       </Link>
       <Link
         href={"/film"}
-        className={`rounded-b-md px-2 py-1 min-w-12 shadow-sm shadow-scooter-950 dark:shadow-scooter-50 ${currentPath === "/film" ? " bg-scooter-600 text-scooter-50 dark:bg-scooter-50 dark:text-scooter-900" : ""}`}
+        className={`rounded-b-md px-2 py-1 min-w-12 shadow-sm shadow-scooter-950 dark:shadow-scooter-700 ${currentPath === "/film" ? " bg-scooter-600 text-scooter-50 dark:bg-scooter-50 dark:text-scooter-900" : ""} hover:bg-scooter-600 hover:text-scooter-50 dark:hover:bg-scooter-50 dark:hover:text-scooter-900 `}
       >
         Film
       </Link>
       <Link
         href={"/tv"}
-        className={`rounded-b-md px-2 py-1 min-w-12 shadow-sm shadow-scooter-950 dark:shadow-scooter-50 ${currentPath === "/tv" ? " bg-scooter-600 text-scooter-50 dark:bg-scooter-50 dark:text-scooter-900" : ""}`}
+        className={`rounded-b-md px-2 py-1 min-w-12 shadow-sm shadow-scooter-950 dark:shadow-scooter-700 ${currentPath === "/tv" ? " bg-scooter-600 text-scooter-50 dark:bg-scooter-50 dark:text-scooter-900" : ""} hover:bg-scooter-600 hover:text-scooter-50 dark:hover:bg-scooter-50 dark:hover:text-scooter-900`}
       >
         TV
       </Link>

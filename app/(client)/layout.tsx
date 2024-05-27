@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Roboto } from "next/font/google";
+import { Gantari } from "next/font/google";
 import "./globals.css";
 import Navbar from "../components/Navbar";
 import Provider from "../utils/Provider";
@@ -11,9 +11,9 @@ export const metadata: Metadata = {
 };
 
 //👇 Configure our font object
-const roboto = Roboto({
+const gantari = Gantari({
   display: "swap",
-  weight: ["100", "300", "400", "500", "700"],
+  weight: ["200", "300", "400", "500", "700"],
   subsets: ["latin"],
 });
 
@@ -25,7 +25,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${roboto.className} flex flex-col  min-h-screen bg-neutral-50 text-scooter-900 dark:bg-scooter-900 dark:text-scooter-50`}
+        className={`${gantari.className} flex flex-col  min-h-screen bg-neutral-50 text-scooter-900 dark:bg-scooter-950 dark:text-scooter-50`}
       >
         <Provider>
           <Navbar />

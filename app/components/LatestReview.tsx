@@ -33,23 +33,23 @@ const LatestReview = async ({ format }: Props) => {
   const posterUrl = urlForImage(latestReview?.poster);
 
   return (
-    <section className="grid my-8 py-2 ">
+    <section className="grid my-12 py-2 ">
       <div className="flex justify-between items-center mb-2">
-        <h2 className="uppercase tracking-wider font-medium">
+        <h2 className="uppercase font-medium md:text-xl">
           Latest {format} Review
         </h2>
-        <small className=" text-xs font-light">
+        <small className=" text-xs font-normal">
           {new Date(latestReview.publishedAt).toDateString()}
         </small>
       </div>
       <div className="mb-3 rounded-md overflow-hidden">
         <img src={posterUrl} alt={latestReview.poster.alt} />
       </div>
-      <div className="flex justify-between">
-        <h3 className=" text-lg text-scooter-800 dark:text-scooter-50">
+      <div className="flex justify-between ">
+        <h3 className=" text-lg md:text-2xl  text-scooter-800 dark:text-scooter-50">
           {latestReview.title}
         </h3>
-        <p>{latestReview.rating}</p>
+        <p className="md:text-2xl">{latestReview.rating}/10</p>
       </div>
       <small className="uppercase text-xs font-light mb-2">
         {latestReview.format}
@@ -57,9 +57,9 @@ const LatestReview = async ({ format }: Props) => {
       <p className=" max-w-[90%] font-light">{latestReview.excerpt}</p>
       <Link
         href={`/${latestReview.format}/${latestReview.slug.current}`}
-        className=" max-w-fit uppercase mt-4 py-1 px-4 text-scooter-50 bg-scooter-600 rounded-md dark:text-scooter-600 dark:bg-scooter-50 text-sm font-semibold"
+        className="btn-primary"
       >
-        Read
+        Read Review
       </Link>
     </section>
   );

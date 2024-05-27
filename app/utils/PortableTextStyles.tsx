@@ -11,7 +11,7 @@ export const PortableTextStyles = {
   block: {
     normal: ({ children }: any) => {
       return (
-        <p className="text-scooter-900 dark:text-scooter-50">{children}</p>
+        <p className="text-scooter-900 dark:text-scooter-50 my-6">{children}</p>
       );
     },
     h1: ({ children }: any) => {

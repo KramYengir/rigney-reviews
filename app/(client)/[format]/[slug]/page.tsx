@@ -29,7 +29,7 @@ const page = async ({ params }: Props) => {
       <div className="flex justify-start">
         <BackButton />
       </div>
-      <h2 className=" text-2xl font-semibold text-scooter-800 dark:text-scooter-50">
+      <h2 className=" text-2xl md:text-4xl font-semibold text-scooter-800 dark:text-scooter-50">
         {review?.title}
       </h2>
       <small className=" font-light">
@@ -38,19 +38,26 @@ const page = async ({ params }: Props) => {
       <div className="my-8 rounded-md overflow-hidden">
         <img src={posterUrl} alt={review?.poster.alt} />
       </div>
-      <div className="prose text-scooter-900 dark:text-scooter-50">
+      <div className="leading-relaxed max-w-2xl text-scooter-900 dark:text-scooter-50">
         <PortableText
           value={review?.body}
           components={PortableTextStyles}
         ></PortableText>
       </div>
-      <div className=" my-4 p-4 rounded text-scooter-50 bg-scooter-900 dark:text-scooter-900 dark:bg-scooter-50">
-        <p className=" uppercase font-semibold">Rating: {review.rating}</p>
-        <p className=" italic my-2">{review.excerpt}</p>
+      <div className="flex flex-wrap justify-between  my-4 max-w-2xl p-4 rounded text-scooter-50 bg-scooter-900 dark:text-scooter-900 dark:bg-scooter-50">
+        <p className="flex items-center uppercase font-semibold text-4xl">
+          {review.rating}
+          <span className="font-medium text-sm">/10</span>
+        </p>
+        <p className="text-balance italic my-2">{review.excerpt}</p>
       </div>
       <hr className="my-4 border-b border-slate-300" />
-      <ProductionInfo title={review.title} />
       {/* tetsing api integration */}
+      <ProductionInfo title={review.title} />
+      <hr className="my-4 border-b border-slate-300" />
+      <div className="flex justify-start">
+        <BackButton />
+      </div>
     </article>
   );
 };

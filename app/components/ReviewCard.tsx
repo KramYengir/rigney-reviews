@@ -12,8 +12,8 @@ const ReviewCard = ({ review }: Props) => {
 
   return (
     <article className="card-gradient relative flex flex-col min-h-40 min-w-72 p-4 rounded-xl text-slate-50">
-      <header className="flex justify-between items-center font-semibold">
-        <h3 className=" tracking-wide">{review?.title}</h3>
+      <header className="flex justify-between items-center text-lg font-semibold">
+        <h3>{review?.title}</h3>
         <p>{review.rating}</p>
       </header>
       <p className=" uppercase text-xs text-slate-100">{review?.format}</p>
@@ -24,7 +24,7 @@ const ReviewCard = ({ review }: Props) => {
         </small>
         <Link
           href={`/${review.format}/${review?.slug?.current}`}
-          className="uppercase py-1 px-4 bg-slate-50 rounded-md text-scooter-600 text-sm font-semibold"
+          className="btn-secondary"
         >
           Read
         </Link>

@@ -16,8 +16,8 @@ const Navbar = () => {
 
   return (
     <header>
-      <nav className="flex justify-between mx-auto max-w-5xl px-6 py-4 border-b border-slate-300">
-        <Link href={"/"} className="text-2xl tracking-wider">
+      <nav className="flex justify-between items-center mx-auto max-w-5xl px-6 py-2 border-b border-slate-300">
+        <Link href={"/"} className="text-4xl tracking-wider">
           <span className=" text-scooter-600 font-bold">R</span>Reviews
         </Link>
         {/* Mobile Nav */}
@@ -25,20 +25,26 @@ const Navbar = () => {
           {isOpen ? <IoCloseOutline /> : <IoMenu />}
         </button>
         {isOpen && (
-          <ul className="fixed inset-0 z-40 py-24 flex flex-col gap-6 items-center bg-slate-50 text-scooter-900 dark:bg-scooter-900 dark:text-scooter-50">
-            <li>
+          <ul className="fixed inset-0 z-40 py-24 flex flex-col gap-12 text-2xl items-center bg-slate-50 text-scooter-900 dark:bg-scooter-950 dark:text-scooter-50">
+            <li
+              className={`hover:text-scooter-500 ${pathName === "/masterpieces" ? "text-scooter-500 dark:text-scooter-300 font-medium" : ""} `}
+            >
               <Link href={"/masterpieces"} onClick={toggleMenu}>
-                MasterPieces
+                Masterpieces
               </Link>
             </li>
-            <li>
+            <li
+              className={`hover:text-scooter-500 ${pathName === "/hidden-gems" ? "text-scooter-500 dark:text-scooter-300 font-medium" : ""} `}
+            >
               <Link href={"/hidden-gems"} onClick={toggleMenu}>
                 Hidden Gems
               </Link>
             </li>
-            <li>
+            <li
+              className={`hover:text-scooter-500 ${pathName === "/about" ? "text-scooter-500 dark:text-scooter-300 font-medium" : ""} `}
+            >
               <Link href={"/about"} onClick={toggleMenu}>
-                About Me
+                About
               </Link>
             </li>
             <li>
@@ -47,19 +53,19 @@ const Navbar = () => {
           </ul>
         )}
         {/* Desktop Nav */}
-        <ul className="hidden md:flex gap-4 uppercase">
+        <ul className="hidden md:flex items-center gap-6 ">
           <li
-            className={`hover:text-scooter-500 ${pathName === "/masterpieces" ? "text-scooter-500" : ""} `}
+            className={`hover:text-scooter-500 ${pathName === "/masterpieces" ? "text-scooter-500 dark:text-scooter-300 font-medium" : ""} `}
           >
             <Link
               href={"/masterpieces"}
               aria-current={pathName === "/masterpieces" ? "page" : undefined}
             >
-              MasterPieces
+              Masterpieces
             </Link>
           </li>
           <li
-            className={`hover:text-scooter-500 ${pathName === "/hidden-gems" ? "text-scooter-500" : ""} `}
+            className={`hover:text-scooter-500 dark:hover:text-scooter-400 ${pathName === "/hidden-gems" ? "text-scooter-500 dark:text-scooter-300 font-medium" : ""} `}
           >
             <Link
               href={"/hidden-gems"}
@@ -69,7 +75,7 @@ const Navbar = () => {
             </Link>
           </li>
           <li
-            className={`hover:text-scooter-500 ${pathName === "/about" ? "text-scooter-500" : ""} `}
+            className={`hover:text-scooter-500 dark:hover:text-scooter-400 ${pathName === "/about" ? "text-scooter-500 dark:text-scooter-300 font-medium" : ""} `}
           >
             <Link
               href={"/about"}
@@ -78,7 +84,9 @@ const Navbar = () => {
               About
             </Link>
           </li>
-          <li className={`hover:text-scooter-500 `}>
+          <li
+            className={`hover:text-scooter-500 dark:hover:text-scooter-400 grid`}
+          >
             <ThemeSwitch />
           </li>
         </ul>
