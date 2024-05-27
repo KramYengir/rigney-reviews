@@ -15,6 +15,8 @@ interface Props {
   };
 }
 
+export const revalidate = 60; //re fetch data every minute
+
 const page = async ({ params }: Props) => {
   const review: Review = await getSingleReview(params.slug);
 
@@ -44,12 +46,12 @@ const page = async ({ params }: Props) => {
           components={PortableTextStyles}
         ></PortableText>
       </div>
-      <div className="flex flex-wrap justify-between  my-4 max-w-2xl p-4 rounded text-scooter-50 bg-scooter-900 dark:text-scooter-900 dark:bg-scooter-50">
+      <div className="flex flex-wrap justify-evenly  my-4 max-w-2xl p-4 rounded text-scooter-50 bg-scooter-900 dark:text-scooter-900 dark:bg-scooter-50">
         <p className="flex items-center uppercase font-semibold text-4xl">
           {review.rating}
           <span className="font-medium text-sm">/10</span>
         </p>
-        <p className="text-balance italic my-2">{review.excerpt}</p>
+        <p className="text-balance italic my-2 max-w-md">{review.excerpt}</p>
       </div>
       <hr className="my-4 border-b border-slate-300" />
       {/* tetsing api integration */}

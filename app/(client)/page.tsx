@@ -5,7 +5,7 @@ import LatestReview from "../components/LatestReview";
 import FilterBar from "../components/FilterBar";
 import Reviews from "../components/Reviews";
 
-export const revalidate = 3600; //re fetch data every hour
+export const revalidate = 60; //re fetch data every minute
 
 const Home = async () => {
   const reviews: Review[] = await getAllReviews();

@@ -23,7 +23,7 @@ export const PortableTextStyles = {
     },
     h2: ({ children }: any) => {
       return (
-        <h2 className="text-xl font-semibold text-scooter-900 dark:text-scooter-50">
+        <h2 className="text-xl md:text-2xl font-semibold text-scooter-900 dark:text-scooter-50">
           {children}
         </h2>
       );

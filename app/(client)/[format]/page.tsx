@@ -8,7 +8,7 @@ import { getReviewsByFormat } from "@/app/utils/Queries";
 import { error } from "console";
 import React from "react";
 
-export const revalidate = 3600; //re fetch data every hour
+export const revalidate = 60; //re fetch data every minute
 
 interface Props {
   params: {
