@@ -3,9 +3,12 @@ import Link from "next/link";
 import { IoMenu, IoCloseOutline } from "react-icons/io5";
 import { useState } from "react";
 import ThemeSwitch from "./ThemeSwitch";
+import { usePathname } from "next/navigation";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+
+  const pathName = usePathname();
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -44,17 +47,38 @@ const Navbar = () => {
           </ul>
         )}
         {/* Desktop Nav */}
-        <ul className="hidden md:flex">
-          <li>
-            <Link href={"/"}>MasterPieces</Link>
+        <ul className="hidden md:flex gap-4 uppercase">
+          <li
+            className={`hover:text-scooter-500 ${pathName === "/masterpieces" ? "text-scooter-500" : ""} `}
+          >
+            <Link
+              href={"/masterpieces"}
+              aria-current={pathName === "/masterpieces" ? "page" : undefined}
+            >
+              MasterPieces
+            </Link>
           </li>
-          <li>
-            <Link href={"/"}>Hidden Gems</Link>
+          <li
+            className={`hover:text-scooter-500 ${pathName === "/hidden-gems" ? "text-scooter-500" : ""} `}
+          >
+            <Link
+              href={"/hidden-gems"}
+              aria-current={pathName === "/hidden-gems" ? "page" : undefined}
+            >
+              Hidden Gems
+            </Link>
           </li>
-          <li>
-            <Link href={"/"}>About Me</Link>
+          <li
+            className={`hover:text-scooter-500 ${pathName === "/about" ? "text-scooter-500" : ""} `}
+          >
+            <Link
+              href={"/about"}
+              aria-current={pathName === "/about" ? "page" : undefined}
+            >
+              About
+            </Link>
           </li>
-          <li>
+          <li className={`hover:text-scooter-500 `}>
             <ThemeSwitch />
           </li>
         </ul>

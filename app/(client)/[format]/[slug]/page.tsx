@@ -26,7 +26,9 @@ const page = async ({ params }: Props) => {
 
   return (
     <article className="grid pt-4 pb-10">
-      <BackButton />
+      <div className="flex justify-start">
+        <BackButton />
+      </div>
       <h2 className=" text-2xl font-semibold text-scooter-800 dark:text-scooter-50">
         {review?.title}
       </h2>
