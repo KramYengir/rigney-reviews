@@ -11,7 +11,7 @@ const ReviewCard = ({ review }: Props) => {
   const posterUrl = urlForImage(review?.poster);
 
   return (
-    <article className="card-gradient relative flex flex-col min-h-40 p-4 rounded-xl text-slate-50">
+    <article className="card-gradient relative flex flex-col min-h-40 min-w-72 p-4 rounded-xl text-slate-50">
       <header className="flex justify-between items-center font-semibold">
         <h3 className=" tracking-wide">{review?.title}</h3>
         <p>{review.rating}</p>

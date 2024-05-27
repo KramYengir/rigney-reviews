@@ -9,14 +9,18 @@ interface ReviewsProps {
 
 const Reviews = ({ reviews, format }: ReviewsProps) => {
   return (
-    <section className="grid gap-4 py-10">
+    <section className="grid mt-20">
       <h2 className=" uppercase tracking-wider font-medium pb-1 border-b border-slate-300 mb-4">
         {format} Reviews
       </h2>
-      {reviews?.length > 0 &&
-        reviews.map((review) => (
-          <ReviewCard key={review._id} review={review} />
-        ))}
+      <ul className="flex flex-wrap justify-center gap-6 min-w-full">
+        {reviews?.length > 0 &&
+          reviews.map((review) => (
+            <li key={review._id} className="flex-1  max-w-2xl">
+              <ReviewCard review={review} />
+            </li>
+          ))}
+      </ul>
     </section>
   );
 };
