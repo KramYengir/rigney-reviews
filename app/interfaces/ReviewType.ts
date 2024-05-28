@@ -5,7 +5,7 @@ interface Review {
     current: string;
   };
   rating: number;
-  format: "movie" | "tv_show";
+  format: "film" | "tv";
   excerpt: string;
   body: Block[];
   poster: {

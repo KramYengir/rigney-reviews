@@ -2,8 +2,14 @@ import React from "react";
 import Review from "../interfaces/ReviewType";
 import { fetchMovie } from "../utils/API";
 
-const ProductionInfo = async ({ title }: { title: string }) => {
-  const details = await fetchMovie(title);
+const ProductionInfo = async ({
+  title,
+  format,
+}: {
+  title: string;
+  format: string;
+}) => {
+  const details = await fetchMovie(title, format);
   console.log(details);
   return (
     <div className=" mt-4">

@@ -26,6 +26,9 @@ const page = async ({ params }: Props) => {
   }
   const posterUrl = urlForImage(review?.poster);
 
+  // determine format type for OMDb APi request
+  const type = review.format === "tv" ? "series" : "movie";
+
   return (
     <article className="grid pt-4 pb-10">
       <div className="flex justify-start">
@@ -55,7 +58,7 @@ const page = async ({ params }: Props) => {
       </div>
       <hr className="my-4 border-b border-slate-300" />
       {/* tetsing api integration */}
-      <ProductionInfo title={review.title} />
+      <ProductionInfo title={review.title} format={type} />
       <hr className="my-4 border-b border-slate-300" />
       <div className="flex justify-start">
         <BackButton />
