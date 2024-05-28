@@ -1,10 +1,13 @@
 import Reviews from "@/app/components/Reviews";
 import React from "react";
 import { getHiddenGems } from "@/app/utils/Queries";
-import BackButton from "@/app/components/BackButton";
+
+export const revalidate = 60; //re fetch data every minute
 
 const HiddenGemsPage = async () => {
   const reviews = await getHiddenGems();
+
+  console.log(reviews);
 
   return (
     <section className=" py-8">
@@ -16,7 +19,7 @@ const HiddenGemsPage = async () => {
         the ones that I expected to be more widely known and appreciated, but
         for some reason are not.
       </p>
-      {reviews.length > 0 ? (
+      {reviews?.length > 0 ? (
         <Reviews reviews={reviews} />
       ) : (
         <p className=" italic">Sorry, could not find any reviews :(</p>

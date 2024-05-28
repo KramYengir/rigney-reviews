@@ -1,7 +1,8 @@
 import Reviews from "@/app/components/Reviews";
 import React from "react";
 import { getMasterpieces } from "@/app/utils/Queries";
-import BackButton from "@/app/components/BackButton";
+
+export const revalidate = 60; //re fetch data every minute
 
 const MasterpiecesPage = async () => {
   const reviews = await getMasterpieces();
