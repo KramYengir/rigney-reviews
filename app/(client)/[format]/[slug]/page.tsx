@@ -30,11 +30,11 @@ const page = async ({ params }: Props) => {
   const type = review.format === "tv" ? "series" : "movie";
 
   return (
-    <article className="grid pt-4 pb-10">
+    <article className="grid pt-2 pb-10">
       <div className="flex justify-start">
         <BackButton />
       </div>
-      <h2 className=" text-2xl md:text-4xl font-semibold text-scooter-800 dark:text-scooter-50">
+      <h2 className="mt-12 text-2xl md:text-4xl font-semibold text-scooter-800 dark:text-scooter-50">
         {review?.title}
       </h2>
       <small className=" font-light">

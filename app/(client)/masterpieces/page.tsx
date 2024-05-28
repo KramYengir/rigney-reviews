@@ -1,6 +1,7 @@
 import Reviews from "@/app/components/Reviews";
 import React from "react";
 import { getMasterpieces } from "@/app/utils/Queries";
+import BackButton from "@/app/components/BackButton";
 
 const MasterpiecesPage = async () => {
   const reviews = await getMasterpieces();
@@ -10,7 +11,7 @@ const MasterpiecesPage = async () => {
       <h1 className=" uppercase text-2xl tracking-wider font-medium text-scooter-600 dark:text-scooter-100">
         Masterpieces
       </h1>
-      <p className=" mt-2 mb-6">
+      <p className=" mt-2 mb-6 text-balance">
         Here you can find the Films and TV Shows which I consider Masterpieces
         of the craft. These are not simply reviews with a 10/10 Rating, because
         they may not be perfect, but rather they are films/shows which excel in

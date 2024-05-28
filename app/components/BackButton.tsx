@@ -6,7 +6,7 @@ const BackButton = () => {
   const router = useRouter();
 
   return (
-    <button onClick={() => router.back()} className="mb-12">
+    <button onClick={() => router.back()} className="btn-secondary">
       &#x2039; Back
     </button>
   );

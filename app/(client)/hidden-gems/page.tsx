@@ -1,6 +1,7 @@
 import Reviews from "@/app/components/Reviews";
 import React from "react";
 import { getHiddenGems } from "@/app/utils/Queries";
+import BackButton from "@/app/components/BackButton";
 
 const HiddenGemsPage = async () => {
   const reviews = await getHiddenGems();
@@ -10,7 +11,7 @@ const HiddenGemsPage = async () => {
       <h1 className=" uppercase text-2xl tracking-wider font-medium text-scooter-600 dark:text-scooter-100">
         Hidden-Gems
       </h1>
-      <p className=" mt-2 mb-6">
+      <p className=" mt-2 mb-6 text-balance">
         Here you can find the Films and TV Shows which I consider Hidden-Gems,
         the ones that I expected to be more widely known and appreciated, but
         for some reason are not.

@@ -25,11 +25,13 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${gantari.className} flex flex-col  min-h-screen bg-neutral-50 text-scooter-900 dark:bg-scooter-950 dark:text-scooter-50`}
+        className={`${gantari.className} flex flex-col  min-h-screen bg-neutral-50 text-scooter-950 dark:bg-scooter-950 dark:text-scooter-50`}
       >
         <Provider>
           <Navbar />
-          <main className="flex-1 max-w-5xl mx-auto px-6 pb-8">{children}</main>
+          <div className="flex-1">
+            <main className=" max-w-5xl mx-auto px-6 pb-8">{children}</main>
+          </div>
           <Footer />
         </Provider>
       </body>

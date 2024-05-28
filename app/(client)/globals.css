@@ -4,7 +4,7 @@
 
 @layer components {
   .btn-primary {
-    @apply max-w-fit uppercase mt-4 py-2 px-6 text-scooter-50 bg-scooter-600 rounded-md border dark:text-scooter-900 dark:bg-scooter-50 text-sm font-semibold focus-visible:outline-none focus-visible:ring focus-visible:ring-scooter-400  dark:focus-visible:ring-scooter-500 dark:focus-visible:bg-scooter-200 focus-visible:ring-opacity-75 hover:bg-scooter-50 hover:text-scooter-900 hover:border-scooter-900 dark:hover:bg-scooter-950 dark:hover:text-scooter-50 dark:hover:border-scooter-50;
+    @apply max-w-fit uppercase py-2 px-6 text-scooter-50 bg-scooter-600 rounded-md border dark:text-scooter-900 dark:bg-scooter-50 text-sm font-semibold focus-visible:outline-none focus-visible:ring focus-visible:ring-scooter-400  dark:focus-visible:ring-scooter-500 dark:focus-visible:bg-scooter-200 focus-visible:ring-opacity-75 hover:bg-scooter-50 hover:text-scooter-900 hover:border-scooter-900 dark:hover:bg-scooter-950 dark:hover:text-scooter-50 dark:hover:border-scooter-50;
   }
   .btn-secondary {
     @apply uppercase py-1 px-4 bg-slate-50 rounded-md text-scooter-600 text-sm font-semibold hover:bg-scooter-600 hover:text-scooter-50 dark:hover:bg-scooter-950 dark:hover:text-scooter-50;

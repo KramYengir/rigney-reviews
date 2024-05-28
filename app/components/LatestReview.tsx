@@ -59,7 +59,7 @@ const LatestReview = async ({ format }: Props) => {
       <p className=" max-w-[90%] font-light">{latestReview.excerpt}</p>
       <Link
         href={`/${latestReview.format}/${latestReview.slug.current}`}
-        className="btn-primary"
+        className="btn-primary mt-6"
       >
         Read Review
       </Link>
