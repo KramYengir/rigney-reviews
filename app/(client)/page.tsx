@@ -5,6 +5,7 @@ import LatestReview from "../components/LatestReview";
 import FilterBar from "../components/FilterBar";
 import Reviews from "../components/Reviews";
 import type { Metadata } from "next";
+import { Suspense } from "react";
 
 export const metadata: Metadata = {
   title: "RReviews",
@@ -20,7 +21,9 @@ const Home = async () => {
     <>
       <FilterBar />
       <LatestReview />
-      <Reviews reviews={reviews} format="All" />
+      <Suspense fallback={<p>Loading reviews...</p>}>
+        <Reviews reviews={reviews} format="All" />
+      </Suspense>
     </>
   );
 };
