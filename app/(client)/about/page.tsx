@@ -1,14 +1,21 @@
 import BackButton from "@/app/components/BackButton";
+import Image from "next/image";
 import React from "react";
+import lightLogo from "/public/lightLogo.png";
+import darkLogo from "/public/darkLogo.png";
 
 const AboutPage = () => {
   return (
-    <section className="pb-8">
-      <div className="flex justify-start my-2">
-        <BackButton />
+    <section className="py-8 text-center sm:text-left">
+      <div className="block dark:hidden">
+        <Image src={lightLogo} alt="next logo" />
       </div>
-      <h1 className=" text-4xl tracking-wider font-medium text-scooter-900 dark:text-scooter-100">
-        About <span className="text-scooter-600">Rigney</span>Reviews...
+      <div className="hidden dark:block">
+        <Image src={darkLogo} alt="next logo" />
+      </div>
+      <h1 className="mt-10  text-2xl tracking-wider font-medium text-scooter-950 dark:text-scooter-100">
+        About <span className="text-scooter-600 font-bold">Rigney</span>
+        Reviews...
       </h1>
       <p className="my-4 max-w-2xl">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. A illo

@@ -5,8 +5,13 @@ import ReviewCard from "@/app/components/ReviewCard";
 import Reviews from "@/app/components/Reviews";
 import Review from "@/app/interfaces/ReviewType";
 import { getReviewsByFormat } from "@/app/utils/Queries";
-import { error } from "console";
 import React from "react";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "RReviews",
+  description: "Rigney Reviews - The best reviews on the internet",
+};
 
 export const revalidate = 60; //re fetch data every minute
 

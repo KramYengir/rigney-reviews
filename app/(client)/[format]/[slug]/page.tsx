@@ -8,6 +8,12 @@ import ProductionInfo from "@/app/components/ProductionInfo";
 import { PortableTextStyles } from "@/app/utils/PortableTextStyles";
 import { notFound } from "next/navigation";
 import BackButton from "@/app/components/BackButton";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "RReviews",
+  description: "Rigney Reviews - The best reviews on the internet",
+};
 
 interface Props {
   params: {
