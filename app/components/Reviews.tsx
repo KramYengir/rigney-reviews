@@ -16,7 +16,7 @@ const Reviews = ({ reviews, format }: ReviewsProps) => {
       <ul className="flex flex-wrap justify-center gap-6 min-w-full">
         {reviews?.length > 0 &&
           reviews.map((review) => (
-            <li key={review._id} className="flex-1  max-w-2xl">
+            <li key={review._id} className="flex-1">
               <ReviewCard review={review} />
             </li>
           ))}

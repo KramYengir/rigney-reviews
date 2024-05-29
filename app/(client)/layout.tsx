@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Gantari } from "next/font/google";
+import { Hanken_Grotesk } from "next/font/google";
 import "./globals.css";
 import Navbar from "../components/Navbar";
 import Provider from "../utils/Provider";
@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 };
 
 //👇 Configure our font object
-const gantari = Gantari({
+const gantari = Hanken_Grotesk({
   display: "swap",
   weight: ["200", "300", "400", "500", "700"],
   subsets: ["latin"],

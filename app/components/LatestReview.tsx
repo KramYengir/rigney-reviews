@@ -37,9 +37,7 @@ const LatestReview = async ({ format }: Props) => {
   return (
     <section className="grid my-12 py-2 ">
       <div className="flex justify-between items-center mb-2">
-        <h2 className="uppercase font-medium md:text-xl">
-          Latest {format} Review
-        </h2>
+        <h2 className="uppercase md:text-lg">Latest {format} Review</h2>
         <small className=" text-xs font-normal">
           {new Date(latestReview.publishedAt).toDateString()}
         </small>

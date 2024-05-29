@@ -11,7 +11,7 @@ const ReviewCard = ({ review }: Props) => {
   const posterUrl = urlForImage(review?.poster);
 
   return (
-    <article className="card-gradient relative flex flex-col min-h-40 min-w-72 p-4 rounded-xl text-slate-50">
+    <article className="card-gradient relative flex flex-col min-h-40 min-w-72 max-w-md p-4 rounded-xl text-slate-50">
       <header className="flex justify-between items-center text-lg font-semibold">
         <h3>{review?.title}</h3>
         <p>{review.rating}</p>
@@ -31,8 +31,8 @@ const ReviewCard = ({ review }: Props) => {
       </footer>
 
       {/* bg image */}
-      <div className="absolute -z-10 inset-0 grid place-content-center overflow-hidden  rounded-xl">
-        <img src={posterUrl} alt={review.poster.alt} className=" max-w-100" />
+      <div className="absolute -z-10 inset-0 grid place-content-baseline overflow-hidden  rounded-xl">
+        <img src={posterUrl} alt={review.poster.alt} />
       </div>
     </article>
   );
