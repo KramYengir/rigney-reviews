@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   description: "Rigney Reviews - The best reviews on the internet",
 };
 
-export const revalidate = 60; //re fetch data every minute
+export const revalidate = 3600; //re fetch data every hour
 
 const Home = async () => {
   const reviews: Review[] = await getAllReviews();

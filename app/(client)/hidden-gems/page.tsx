@@ -2,7 +2,7 @@ import Reviews from "@/app/components/Reviews";
 import React from "react";
 import { getHiddenGems } from "@/app/utils/Queries";
 
-export const revalidate = 60; //re fetch data every minute
+export const revalidate = 3600; //re fetch data every hour
 
 const HiddenGemsPage = async () => {
   const reviews = await getHiddenGems();

@@ -11,7 +11,7 @@ interface Props {
   format?: string;
 }
 
-export const revalidate = 60; //re fetch data every minute
+export const revalidate = 3600; //re fetch data every hour
 
 const LatestReview = async ({ format }: Props) => {
   let latestReview;

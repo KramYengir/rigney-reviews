@@ -21,7 +21,7 @@ interface Props {
   };
 }
 
-export const revalidate = 60; //re fetch data every minute
+export const revalidate = 3600; //re fetch data every hour
 
 const page = async ({ params }: Props) => {
   const review: Review = await getSingleReview(params.slug);
