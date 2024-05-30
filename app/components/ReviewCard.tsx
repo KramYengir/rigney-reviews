@@ -31,7 +31,7 @@ const ReviewCard = ({ review }: Props) => {
       </footer>
 
       {/* bg image */}
-      <div className="absolute -z-10 inset-0 grid place-content-baseline overflow-hidden  rounded-xl">
+      <div className="absolute -z-10 inset-0 grid place-content-center overflow-hidden  rounded-xl">
         <img src={posterUrl} alt={review.poster.alt} />
       </div>
     </article>

@@ -48,7 +48,7 @@ export default function RootLayout({
         <meta name="theme-color" content="#ffffff"></meta>
       </head>
       <body
-        className={`${gantari.className} flex flex-col  min-h-screen bg-neutral-50 text-scooter-950 dark:bg-scooter-950 dark:text-scooter-50`}
+        className={`${gantari.className} flex flex-col  min-h-screen leading-relaxed bg-neutral-50 text-scooter-950 dark:bg-scooter-950 dark:text-scooter-50`}
       >
         <Provider>
           <Navbar />
