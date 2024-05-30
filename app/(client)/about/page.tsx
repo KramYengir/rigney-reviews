@@ -8,18 +8,10 @@ const AboutPage = () => {
   return (
     <section className="grid justify-center py-12 text-left">
       <div className=" mx-auto max-w-64">
-        <div className="dark:block hidden">
-          <Image
-            src={rrLogoBlue}
-            alt="logo in the shape of a film reel with the letters r r"
-          ></Image>
-        </div>
-        <div className="dark:hidden block">
-          <Image
-            src={rrLogoBlack}
-            alt="logo in the shape of a film reel with the letters r r"
-          ></Image>
-        </div>
+        <Image
+          src={rrLogoBlue}
+          alt="logo in the shape of a film reel with the letters r r"
+        ></Image>
       </div>
       <h1 className="mt-12 text-2xl  sm:text-4xl tracking-wider font-medium text-scooter-950 dark:text-scooter-100">
         What is <span className="text-scooter-600 font-bold">Rigney</span>

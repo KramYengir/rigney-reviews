@@ -4,6 +4,9 @@ import { IoMenu, IoCloseOutline } from "react-icons/io5";
 import { useState } from "react";
 import ThemeSwitch from "./ThemeSwitch";
 import { usePathname } from "next/navigation";
+import Image from "next/image";
+
+import rrLogoBlue from "/public/RR-logo-blue.svg";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -17,7 +20,13 @@ const Navbar = () => {
   return (
     <header>
       <nav className="flex justify-between items-center mx-auto max-w-5xl px-6 py-2 border-b border-slate-300">
-        <Link href={"/"} className="text-4xl tracking-wider">
+        <Link href={"/"} className="flex items-center text-4xl tracking-wider">
+          <div className=" max-w-8 mr-1">
+            <Image
+              src={rrLogoBlue}
+              alt="logo in the shape of a film reel with the letters r r"
+            ></Image>
+          </div>
           <span className=" text-scooter-600 font-bold">R</span>Reviews
         </Link>
         {/* Mobile Nav */}
