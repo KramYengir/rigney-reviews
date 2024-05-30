@@ -8,6 +8,8 @@ interface Review {
   format: "film" | "tv";
   excerpt: string;
   body: Block[];
+  head: string;
+  heart: string;
   poster: {
     _type: string;
     alt: string;

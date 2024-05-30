@@ -87,6 +87,31 @@ export const review = {
       validation: (Rule: Rule) => Rule.required().error("Body is required"),
     },
     {
+      name: "head",
+      title:
+        "Head - Direction, pacing, plot, writing, characters, dialogue and coherance.",
+      type: "text",
+      description: "Write a short review of if this 'works' or not.",
+      validation: (Rule: Rule) => [
+        Rule.required().error("Head is required"),
+        Rule.min(40).error("Head must be at least 40 characters"),
+        Rule.max(300).error("Head must be at most 300 characters"),
+      ],
+    },
+    {
+      name: "heart",
+      title:
+        "Heart - Mood, atmosphere, style, soundtrack, character relatability and cinematography.",
+      type: "text",
+      description: "Write a short review of it makes you feel",
+      validation: (Rule: Rule) => [
+        Rule.required().error("Heart is required"),
+        Rule.min(40).error("Heart must be at least 40 characters"),
+        Rule.max(300).error("Heart must be at most 300 characters"),
+      ],
+    },
+
+    {
       name: "poster",
       title: "Poster",
       type: "image",

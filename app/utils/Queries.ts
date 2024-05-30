@@ -23,6 +23,8 @@ const SINGLE_QUERY = `*[_type == "review" && slug.current == $slug][0] {
   rating,
   excerpt,
   body,
+  head,
+  heart,
   poster,
   author-> {name},
   "tagNames": tags[]->name,

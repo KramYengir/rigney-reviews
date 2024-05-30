@@ -1,4 +1,5 @@
 import React from "react";
+import { FaBrain, FaHeart } from "react-icons/fa6";
 import { getSingleReview } from "@/app/utils/Queries";
 import Review from "@/app/interfaces/ReviewType";
 import Link from "next/link";
@@ -54,6 +55,20 @@ const page = async ({ params }: Props) => {
           value={review?.body}
           components={PortableTextStyles}
         ></PortableText>
+      </div>
+      <div className="grid gap-6 text-center max-w-2xl py-6 my-6 px-4 border border-scooter-600 dark:border-scooter-50 rounded-md">
+        <div className="flex flex-wrap sm:flex-nowrap items-center gap-4">
+          <div className=" mx-auto text-4xl text-scooter-600 dark:text-scooter-50">
+            <FaBrain />
+          </div>
+          <p>{review?.head}</p>
+        </div>
+        <div className="flex flex-wrap sm:flex-nowrap items-center gap-4">
+          <div className=" mx-auto text-4xl text-scooter-600 dark:text-scooter-50">
+            <FaHeart />
+          </div>
+          <p>{review?.heart}</p>
+        </div>
       </div>
       <div className="flex flex-wrap justify-start sm:justify-evenly text-left  my-4 max-w-2xl p-4 rounded text-scooter-50 bg-scooter-900 dark:text-scooter-900 dark:bg-scooter-50">
         <p className="flex items-center uppercase font-semibold text-4xl">
