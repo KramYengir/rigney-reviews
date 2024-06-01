@@ -1,5 +1,4 @@
 import React from "react";
-import { FaBrain, FaHeart } from "react-icons/fa6";
 import { getSingleReview } from "@/app/utils/Queries";
 import Review from "@/app/interfaces/ReviewType";
 import Link from "next/link";
@@ -10,6 +9,8 @@ import { PortableTextStyles } from "@/app/utils/PortableTextStyles";
 import { notFound } from "next/navigation";
 import BackButton from "@/app/components/BackButton";
 import type { Metadata } from "next";
+import QuickSynopsis from "@/app/components/QuickSynopsis";
+import Verdict from "@/app/components/Verdict";
 
 export const metadata: Metadata = {
   title: "RReviews",
@@ -50,33 +51,15 @@ const page = async ({ params }: Props) => {
       <div className="my-8 rounded-md overflow-hidden">
         <img src={posterUrl} alt={review?.poster.alt} />
       </div>
+      {review.head && <QuickSynopsis head={review.head} heart={review.heart} />}
+      <hr className="mt-4 mb-6 border-b border-slate-300" />
       <div className="leading-relaxed max-w-2xl text-scooter-900 dark:text-scooter-50">
         <PortableText
           value={review?.body}
           components={PortableTextStyles}
         ></PortableText>
       </div>
-      <div className="grid gap-6 text-center max-w-2xl py-6 my-6 px-4 border border-scooter-600 dark:border-scooter-50 rounded-md">
-        <div className="flex flex-wrap sm:flex-nowrap items-center gap-4">
-          <div className=" mx-auto text-4xl text-scooter-600 dark:text-scooter-50">
-            <FaBrain />
-          </div>
-          <p>{review?.head}</p>
-        </div>
-        <div className="flex flex-wrap sm:flex-nowrap items-center gap-4">
-          <div className=" mx-auto text-4xl text-scooter-600 dark:text-scooter-50">
-            <FaHeart />
-          </div>
-          <p>{review?.heart}</p>
-        </div>
-      </div>
-      <div className="flex flex-wrap justify-start sm:justify-evenly text-left  my-4 max-w-2xl p-4 rounded text-scooter-50 bg-scooter-900 dark:text-scooter-900 dark:bg-scooter-50">
-        <p className="flex items-center uppercase font-semibold text-4xl">
-          {review.rating}
-          <span className="font-medium text-sm">/10</span>
-        </p>
-        <p className="text-balance italic my-2 max-w-md">{review.excerpt}</p>
-      </div>
+      <Verdict rating={review.rating.toString()} excerpt={review.excerpt} />
       <hr className="my-4 border-b border-slate-300" />
       {/* tetsing api integration */}
       <ProductionInfo title={review.title} format={type} />
