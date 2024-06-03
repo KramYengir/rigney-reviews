@@ -2,6 +2,7 @@ import React from "react";
 import Review from "../interfaces/ReviewType";
 import Link from "next/link";
 import { urlForImage } from "@/sanity/lib/image";
+import DynamicLink from "./DynamicLink";
 
 interface Props {
   review: Review;
@@ -22,12 +23,7 @@ const ReviewCard = ({ review }: Props) => {
         <small className="text-slate-100">
           {new Date(review?.publishedAt).toDateString()}
         </small>
-        <Link
-          href={`/${review.format}/${review?.slug?.current}`}
-          className="btn-secondary"
-        >
-          Read
-        </Link>
+        <DynamicLink review={review}>Read</DynamicLink>
       </footer>
 
       {/* bg image */}
