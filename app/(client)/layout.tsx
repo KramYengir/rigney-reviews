@@ -23,7 +23,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" suppressHydrationWarning className="scroll-smooth">
       <head>
         <link
           rel="apple-touch-icon"
@@ -53,7 +53,9 @@ export default function RootLayout({
         <Provider>
           <Navbar />
           <div className="flex-1">
-            <main className=" max-w-5xl mx-auto px-6 pb-8">{children}</main>
+            <main id="main" className=" max-w-5xl mx-auto px-6 pb-8">
+              {children}
+            </main>
           </div>
           <Footer />
         </Provider>

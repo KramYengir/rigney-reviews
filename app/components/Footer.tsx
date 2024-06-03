@@ -3,18 +3,13 @@ import React from "react";
 import logo from "../../public/rigneymade-logo.png";
 import Image from "next/image";
 import RigneymadeLogo from "./RigneymadeLogo";
+import BackToTop from "./BackToTop";
 
 const Footer = () => {
   return (
-    <footer className=" flex justify-center items-center p-2 ">
-      <Link
-        href={"https://www.rigneymade.com/"}
-        className="flex items-center font-sans"
-      >
-        <RigneymadeLogo />
-        {" RigneyMade "}
-        &#169; {new Date().getFullYear()}
-      </Link>
+    <footer className=" flex  items-center p-2 ">
+      <RigneymadeLogo />
+      <BackToTop />
     </footer>
   );
 };
