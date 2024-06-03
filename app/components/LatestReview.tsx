@@ -6,6 +6,7 @@ import {
 } from "../utils/Queries";
 import { urlForImage } from "@/sanity/lib/image";
 import Link from "next/link";
+import { GetStarRating } from "../utils/GetSTarRating";
 
 interface Props {
   format?: string;
@@ -54,7 +55,7 @@ const LatestReview = async ({ format }: Props) => {
             {latestReview.title}
           </h3>
         </Link>
-        <p className="md:text-2xl">{latestReview.rating}/10</p>
+        <div className="flex gap-1">{GetStarRating(latestReview.rating)}</div>
       </div>
       <small className="uppercase text-xs font-light mb-2">
         {latestReview.format}
