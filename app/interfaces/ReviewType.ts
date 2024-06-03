@@ -19,7 +19,7 @@ interface Review {
     };
   };
   author: Author;
-  tags: Tag[];
+  tagNames: String[];
   publishedAt: string;
 }
 
@@ -48,6 +48,7 @@ interface Author {
 }
 
 interface Tag {
+  name: string;
   _ref: string;
   _type: string;
 }
