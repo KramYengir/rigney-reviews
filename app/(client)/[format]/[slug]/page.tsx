@@ -7,7 +7,6 @@ import { PortableText } from "@portabletext/react";
 import ProductionInfo from "@/app/components/ProductionInfo";
 import { PortableTextStyles } from "@/app/utils/PortableTextStyles";
 import { notFound } from "next/navigation";
-import BackButton from "@/app/components/BackButton";
 import type { Metadata } from "next";
 import QuickSynopsis from "@/app/components/QuickSynopsis";
 import Verdict from "@/app/components/Verdict";
@@ -40,7 +39,9 @@ const page = async ({ params }: Props) => {
   return (
     <article className="grid pt-2 pb-10">
       <div className="flex justify-start">
-        <BackButton />
+        <Link href={`/`} className="btn-primary">
+          Back
+        </Link>
       </div>
       <h2 className="mt-12 text-2xl md:text-4xl font-semibold text-scooter-800 dark:text-scooter-50">
         {review?.title}
@@ -65,7 +66,9 @@ const page = async ({ params }: Props) => {
       <ProductionInfo title={review.title} format={type} />
       <hr className="my-4 border-b border-slate-300" />
       <div className="flex justify-start">
-        <BackButton />
+        <Link href={`/`} className="btn-primary">
+          Back
+        </Link>
       </div>
     </article>
   );
