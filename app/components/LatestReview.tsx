@@ -42,13 +42,18 @@ const LatestReview = async ({ format }: Props) => {
           {new Date(latestReview.publishedAt).toDateString()}
         </small>
       </div>
-      <div className="mb-3 rounded-md overflow-hidden">
+      <Link
+        href={`/${latestReview.format}/${latestReview.slug.current}`}
+        className="mb-3 rounded-md overflow-hidden"
+      >
         <img src={posterUrl} alt={latestReview.poster.alt} />
-      </div>
+      </Link>
       <div className="flex justify-between ">
-        <h3 className=" text-lg md:text-2xl  text-scooter-800 dark:text-scooter-50">
-          {latestReview.title}
-        </h3>
+        <Link href={`/${latestReview.format}/${latestReview.slug.current}`}>
+          <h3 className=" text-lg md:text-2xl  text-scooter-800 dark:text-scooter-50">
+            {latestReview.title}
+          </h3>
+        </Link>
         <p className="md:text-2xl">{latestReview.rating}/10</p>
       </div>
       <small className="uppercase text-xs font-light mb-2">
