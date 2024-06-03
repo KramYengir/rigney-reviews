@@ -2,7 +2,7 @@ import BackButton from "@/app/components/BackButton";
 import Image from "next/image";
 import React from "react";
 import rrLogoBlue from "/public/RR-logo-blue.svg";
-import rrLogoBlack from "/public/RR-logo-svg.svg";
+import { FaCheck } from "react-icons/fa";
 
 const AboutPage = () => {
   return (
@@ -18,28 +18,48 @@ const AboutPage = () => {
         Reviews...
       </h1>
       <p className="my-4 max-w-2xl">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. A illo
-        voluptatum blanditiis quis est impedit ratione, laboriosam asperiores
-        tempore provident voluptatibus architecto? Sunt distinctio debitis
-        architecto necessitatibus cupiditate, ex illum. Quae laborum
-        consequuntur sequi tempora suscipit necessitatibus similique expedita
-        accusamus doloribus accusantium? Aperiam error blanditiis eius pariatur
-        molestiae tenetur ipsam recusandae dignissimos temporibus, praesentium,
-        eaque officia architecto saepe qui ullam.
+        RigneyReviews is a personal blog where I share my thoughts on films and
+        TV shows. I try to follow a pattern of reviewing which avoids all the
+        pitfalls I find with other popular reviewing sites.
       </p>
-      <p className="my-4 max-w-2xl">
-        Obcaecati aperiam deserunt explicabo beatae aliquam minus consectetur
-        officiis nihil odio excepturi eius dolorem nulla ut, facere possimus
-        nostrum voluptas praesentium, iste vitae soluta cupiditate quisquam? Ad
-        ab illo ipsam. Possimus in accusamus, quisquam, blanditiis inventore
-        nesciunt ea incidunt dignissimos quia quibusdam id repellat. Doloribus
-        nihil earum laudantium vitae sunt voluptas amet fugit alias officiis
-        rem, nesciunt, error consequatur. Deserunt? Soluta laboriosam sapiente
-        autem nam hic, voluptates repellat molestiae quisquam corrupti
-        voluptatibus ea, provident amet animi. Voluptate velit voluptatum
-        adipisci fugiat eligendi voluptas? Odit placeat vero voluptates deleniti
-        sed repellendus!
-      </p>
+      <h3 className=" text-scooter-800 font-medium text-xl tracking-wide mt-4 mb-3">
+        The RigneyReviews way:
+      </h3>
+      <ul className="mb-4">
+        <li className="flex  justify-start items-center gap-4 pl-2 mb-3 leading-snug">
+          <span className=" text-scooter-700">
+            <FaCheck />
+          </span>{" "}
+          Completely spoiler-free!
+        </li>
+        <li className="flex  justify-start items-center gap-4 pl-2 mb-3 leading-snug">
+          <span className=" text-scooter-700">
+            <FaCheck />
+          </span>{" "}
+          A focus on what works and what doesn&apos;t
+        </li>
+        <li className="flex  justify-start items-center gap-4 pl-2 mb-3 leading-snug">
+          <span className=" text-scooter-700">
+            <FaCheck />
+          </span>{" "}
+          No thesis on the underlying themes of cultural blah blah blah
+        </li>
+        <li className="flex  justify-start items-center gap-4 pl-2 mb-3 leading-snug">
+          <span className=" text-scooter-700">
+            <FaCheck />
+          </span>{" "}
+          No politics, no social commentary, no nonsense!
+        </li>
+        <li className="flex  justify-start items-center gap-4 pl-2 mb-3 leading-snug">
+          <span className=" text-scooter-700">
+            <FaCheck />
+          </span>{" "}
+          No plot summary
+        </li>
+      </ul>
+      <h3 className=" text-scooter-800 font-medium text-xl tracking-wide mt-4 mb-3">
+        My ratings:
+      </h3>
     </section>
   );
 };
