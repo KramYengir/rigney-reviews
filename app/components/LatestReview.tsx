@@ -44,13 +44,13 @@ const LatestReview = async ({ format }: Props) => {
       </div>
       <Link
         href={`/${latestReview.format}/${latestReview.slug.current}`}
-        className="mb-3 rounded-md overflow-hidden"
+        className="mb-3 rounded-md overflow-hidden hover:outline hover:outline-scooter-600 dark:hover:outline-scooter-50"
       >
         <img src={posterUrl} alt={latestReview.poster.alt} />
       </Link>
       <div className="flex justify-between ">
         <Link href={`/${latestReview.format}/${latestReview.slug.current}`}>
-          <h3 className=" text-lg md:text-2xl  text-scooter-800 dark:text-scooter-50">
+          <h3 className=" text-lg md:text-2xl  text-scooter-800 dark:text-scooter-50 hover:text-scooter-950 dark:hover:text-scooter-600">
             {latestReview.title}
           </h3>
         </Link>
