@@ -10,7 +10,6 @@ const ProductionInfo = async ({
   format: string;
 }) => {
   const details = await fetchMovie(title, format);
-  console.log(details);
   return (
     <div className=" mt-4">
       <h2 className=" font-semibold uppercase mb-2">Info:</h2>
