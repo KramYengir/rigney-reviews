@@ -59,7 +59,7 @@ const page = async ({ params }: Props) => {
           components={PortableTextStyles}
         ></PortableText>
       </div>
-      <Verdict rating={review.rating.toString()} excerpt={review.excerpt} />
+      <Verdict rating={review.rating} excerpt={review.excerpt} />
       <hr className="my-4 border-b border-slate-300" />
       {/* tetsing api integration */}
       <ProductionInfo title={review.title} format={type} />
