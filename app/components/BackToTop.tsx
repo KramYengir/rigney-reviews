@@ -1,5 +1,5 @@
 "use client";
-import { FaArrowAltCircleUp } from "react-icons/fa";
+import { FaArrowUp } from "react-icons/fa";
 import React from "react";
 
 const BackToTop = () => {
@@ -10,7 +10,7 @@ const BackToTop = () => {
       aria-label="Back to top"
     >
       <span className="sm:hidden text-scooter-600 dark:text-scooter-50">
-        <FaArrowAltCircleUp />
+        <FaArrowUp />
       </span>
       <span className="hidden sm:block font-light hover:font-normal">
         Back to top
