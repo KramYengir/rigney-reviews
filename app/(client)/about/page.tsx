@@ -1,4 +1,3 @@
-import BackButton from "@/app/components/BackButton";
 import Image from "next/image";
 import React from "react";
 import rrLogoBlue from "/public/RR-logo-blue.svg";
