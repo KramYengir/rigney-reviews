@@ -37,6 +37,7 @@ export const review = {
         Rule.required().error("Rating is required"),
         Rule.min(1).error("Rating must be at least 1"),
         Rule.max(10).error("Rating must be at most 10"),
+        Rule.integer().error("Rating must be an integer"),
       ],
     },
     {
