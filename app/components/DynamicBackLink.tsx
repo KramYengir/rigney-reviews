@@ -22,7 +22,7 @@ const DynamicBackLink = ({ review }: Props) => {
       <Link href={`/`} className="hover:font-medium">
         Home
       </Link>
-      /
+      &gt;
       <Link href={`/${review.format}`} className="hover:font-medium">
         {link}
       </Link>
