@@ -7,9 +7,10 @@ export const revalidate = 3600; //re fetch data every hour
 
 export const metadata: Metadata = {
   title: "Masterpieces",
-  description: "Films and TV Shows which I consider Masterpieces of the craft.",
+  description:
+    "Reviews of Films and TV Shows which I consider Masterpieces of the craft.",
   openGraph: {
-    title: `Masterpieces`,
+    title: `Masterpieces - RigneyReviews`,
     description: `Reviews for Films and TV Shows which I consider Masterpieces of the craft.`,
     locale: "en_EN",
     type: "website",
@@ -18,8 +19,8 @@ export const metadata: Metadata = {
     images: [
       {
         url: "https://rigneyreviews.com/opengraph-image.png",
-        width: 800,
-        height: 600,
+        width: 1200,
+        height: 675,
         alt: "Rigney Reviews Logo and Title",
       },
     ],

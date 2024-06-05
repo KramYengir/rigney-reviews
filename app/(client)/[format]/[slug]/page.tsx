@@ -31,7 +31,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: `${review.title}`,
     description: `${review.excerpt}`,
     openGraph: {
-      title: `${review.title}`,
+      title: `${review.title} - Review by RigneyReviews`,
       description: `${review.excerpt}`,
       locale: "en_EN",
       type: "article",

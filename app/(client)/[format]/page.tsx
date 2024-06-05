@@ -19,8 +19,8 @@ interface Props {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const format = params.format == "tv" ? "TV" : "Film";
   return {
-    title: `${format}`,
-    description: `Reviews for ${params.format}`,
+    title: `${format} Reviews | RigneyReviews`,
+    description: `A list of all ${format} Reviews on RigneyReviews.`,
     openGraph: {
       title: `${format}`,
       description: `${format} Reviews`,
@@ -31,8 +31,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       images: [
         {
           url: "https://rigneyreviews.com/opengraph-image.png",
-          width: 800,
-          height: 600,
+          width: 1200,
+          height: 675,
           alt: "Rigney Reviews Logo and Title",
         },
       ],

@@ -8,8 +8,25 @@ import { TbWorldWww } from "react-icons/tb";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "About",
-  description: "Learn more about RigneyReviews",
+  title: "About - RigneyReviews",
+  description:
+    "Learn more about RigneyReviews - Review style and contact info.",
+  openGraph: {
+    title: `About - RigneyReviews`,
+    description: `Learn more about RigneyReviews`,
+    locale: "en_EN",
+    type: "website",
+    url: `https://rigneyreviews.com/about`,
+    siteName: "RigneyReviews",
+    images: [
+      {
+        url: "https://rigneyreviews.com/opengraph-image.png",
+        width: 1200,
+        height: 675,
+        alt: "Rigney Reviews Logo and Title",
+      },
+    ],
+  },
 };
 
 const headDescription =

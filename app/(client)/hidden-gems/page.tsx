@@ -6,8 +6,8 @@ import { Metadata } from "next";
 export const revalidate = 3600; //re fetch data every hour
 
 export const metadata: Metadata = {
-  title: "Hidden Gems",
-  description: "Films and TV Shows which I consider Hidden Gems.",
+  title: "Hidden Gems - RigneyReviews",
+  description: "Reviews of Films and TV Shows which I consider Hidden Gems.",
   openGraph: {
     title: `Hidden Gems`,
     description: `Films and TV Shows which I consider Hidden Gems.`,
@@ -18,8 +18,8 @@ export const metadata: Metadata = {
     images: [
       {
         url: "https://rigneyreviews.com/opengraph-image.png",
-        width: 800,
-        height: 600,
+        width: 1200,
+        height: 675,
         alt: "Rigney Reviews Logo and Title",
       },
     ],

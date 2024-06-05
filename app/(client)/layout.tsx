@@ -11,14 +11,16 @@ export const metadata: Metadata = {
     default: "RigneyReviews | A Film & TV Review Blog",
     template: `%s | RigneyReviews - A Film & TV Review Blog`,
   },
-  description: "A blog of no-nonense Film & TV Reviews by Rigney",
+  description:
+    "A blog dedicated to no-nonsense, spoiler-free Film & TV Reviews.",
   openGraph: {
     type: "website",
     locale: "en_EN",
     url: "https://rigneyreviews.com",
     siteName: "RigneyReviews",
     title: "RigneyReviews | A Film & TV Review Blog",
-    description: "A blog of no-nonense Film & TV Reviews by Rigney",
+    description:
+      "A blog dedicated to no-nonsense, spoiler-free Film & TV Reviews.",
     images: [
       {
         url: "https://rigneyreviews.com/opengraph-image.png",
