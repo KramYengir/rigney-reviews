@@ -6,8 +6,28 @@ import Provider from "../utils/Provider";
 import Footer from "../components/Footer";
 
 export const metadata: Metadata = {
-  title: "RigneyReviews",
-  description: "The best reviews on the internet",
+  metadataBase: new URL("https://rigneyreviews.com"),
+  title: {
+    default: "RigneyReviews | A Film & TV Review Blog",
+    template: `%s | RigneyReviews - A Film & TV Review Blog`,
+  },
+  description: "A blog of no-nonense Film & TV Reviews by Rigney",
+  openGraph: {
+    type: "website",
+    locale: "en_EN",
+    url: "https://rigneyreviews.com",
+    siteName: "RigneyReviews",
+    title: "RigneyReviews | A Film & TV Review Blog",
+    description: "A blog of no-nonense Film & TV Reviews by Rigney",
+    images: [
+      {
+        url: "https://rigneyreviews.com/opengraph-image.png",
+        width: 1200,
+        height: 675,
+        alt: "RigneyReviews | A Film & TV Review Blog",
+      },
+    ],
+  },
 };
 
 //👇 Configure our font object

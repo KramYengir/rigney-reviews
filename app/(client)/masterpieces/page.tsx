@@ -1,8 +1,30 @@
 import Reviews from "@/app/components/Reviews";
 import React from "react";
 import { getMasterpieces } from "@/app/utils/Queries";
+import { Metadata } from "next";
 
 export const revalidate = 3600; //re fetch data every hour
+
+export const metadata: Metadata = {
+  title: "Masterpieces",
+  description: "Films and TV Shows which I consider Masterpieces of the craft.",
+  openGraph: {
+    title: `Masterpieces`,
+    description: `Reviews for Films and TV Shows which I consider Masterpieces of the craft.`,
+    locale: "en_EN",
+    type: "website",
+    url: `https://rigneyreviews.com/masterpieces`,
+    siteName: "RigneyReviews",
+    images: [
+      {
+        url: "https://rigneyreviews.com/opengraph-image.png",
+        width: 800,
+        height: 600,
+        alt: "Rigney Reviews Logo and Title",
+      },
+    ],
+  },
+};
 
 const MasterpiecesPage = async () => {
   const reviews = await getMasterpieces();

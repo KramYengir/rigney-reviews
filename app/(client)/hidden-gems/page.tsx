@@ -1,8 +1,30 @@
 import Reviews from "@/app/components/Reviews";
 import React from "react";
 import { getHiddenGems } from "@/app/utils/Queries";
+import { Metadata } from "next";
 
 export const revalidate = 3600; //re fetch data every hour
+
+export const metadata: Metadata = {
+  title: "Hidden Gems",
+  description: "Films and TV Shows which I consider Hidden Gems.",
+  openGraph: {
+    title: `Hidden Gems`,
+    description: `Films and TV Shows which I consider Hidden Gems.`,
+    locale: "en_EN",
+    type: "website",
+    url: `https://rigneyreviews.com/hidden-gems`,
+    siteName: "RigneyReviews",
+    images: [
+      {
+        url: "https://rigneyreviews.com/opengraph-image.png",
+        width: 800,
+        height: 600,
+        alt: "Rigney Reviews Logo and Title",
+      },
+    ],
+  },
+};
 
 const HiddenGemsPage = async () => {
   const reviews = await getHiddenGems();

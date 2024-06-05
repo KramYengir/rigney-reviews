@@ -11,16 +11,41 @@ import type { Metadata } from "next";
 import QuickSynopsis from "@/app/components/QuickSynopsis";
 import Verdict from "@/app/components/Verdict";
 import DynamicBackLink from "@/app/components/DynamicBackLink";
-import { GetStarRating } from "@/app/utils/GetSTarRating";
-
-export const metadata: Metadata = {
-  title: "RReviews",
-  description: "Rigney Reviews - The best reviews on the internet",
-};
 
 interface Props {
   params: {
     slug: string;
+  };
+}
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const review: Review = await getSingleReview(params.slug);
+  if (!review) {
+    return {
+      title: "404",
+      description: "Page not found",
+    };
+  }
+
+  return {
+    title: `${review.title}`,
+    description: `${review.excerpt}`,
+    openGraph: {
+      title: `${review.title}`,
+      description: `${review.excerpt}`,
+      locale: "en_EN",
+      type: "article",
+      url: `https://rigneyreviews.com/${review.format}/${review.slug}`,
+      siteName: "RigneyReviews",
+      images: [
+        {
+          url: urlForImage(review.poster),
+          width: 800,
+          height: 600,
+          alt: review.poster.alt,
+        },
+      ],
+    },
   };
 }
 

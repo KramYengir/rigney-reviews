@@ -8,16 +8,35 @@ import { getReviewsByFormat } from "@/app/utils/Queries";
 import React from "react";
 import type { Metadata } from "next";
 
-export const metadata: Metadata = {
-  title: "RReviews",
-  description: "Rigney Reviews - The best reviews on the internet",
-};
-
 export const revalidate = 3600; //re fetch data every hour
 
 interface Props {
   params: {
     format: string;
+  };
+}
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const format = params.format == "tv" ? "TV" : "Film";
+  return {
+    title: `${format}`,
+    description: `Reviews for ${params.format}`,
+    openGraph: {
+      title: `${format}`,
+      description: `${format} Reviews`,
+      locale: "en_EN",
+      type: "website",
+      url: `https://rigneyreviews.com/${params.format}`,
+      siteName: "RigneyReviews",
+      images: [
+        {
+          url: "https://rigneyreviews.com/opengraph-image.png",
+          width: 800,
+          height: 600,
+          alt: "Rigney Reviews Logo and Title",
+        },
+      ],
+    },
   };
 }
 

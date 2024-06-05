@@ -5,6 +5,12 @@ import { FaBrain, FaCheck, FaHeart } from "react-icons/fa";
 import QuickSynopsis from "@/app/components/QuickSynopsis";
 import { MdEmail } from "react-icons/md";
 import { TbWorldWww } from "react-icons/tb";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "About",
+  description: "Learn more about RigneyReviews",
+};
 
 const headDescription =
   "Technical aspects, does it make sense, believability  and coherance.";
