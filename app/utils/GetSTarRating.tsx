@@ -3,7 +3,6 @@ import { FaStar, FaRegStar, FaStarHalfAlt } from "react-icons/fa";
 export const GetStarRating = (rating: number) => {
   const stars = [];
   let starRating = Math.floor(rating) / 2;
-  console.log(rating, " is ", starRating);
 
   for (let i = 1; i <= 5; i++) {
     if (i <= starRating) {

@@ -55,7 +55,9 @@ const LatestReview = async ({ format }: Props) => {
             {latestReview.title}
           </h3>
         </Link>
-        <div className="flex gap-1">{GetStarRating(latestReview.rating)}</div>
+        <div className="flex items-center gap-1">
+          {GetStarRating(latestReview.rating)}
+        </div>
       </div>
       <small className="uppercase text-xs font-light mb-2">
         {latestReview.format}
