@@ -24,7 +24,7 @@ const Navbar = () => {
           <div className=" max-w-8 mr-1">
             <Image
               src={rrLogoBlue}
-              alt="logo in the shape of a film reel with the letters r r"
+              alt="logo in the shape of a film reel "
             ></Image>
           </div>
           <span className=" text-scooter-600 font-bold">R</span>Reviews
