@@ -64,7 +64,7 @@ const page = async ({ params }: Props) => {
   const type = review.format === "tv" ? "series" : "movie";
 
   return (
-    <article className="grid pt-2 pb-10">
+    <article className="grid pt-2 pb-10 sm:max-w-[90%] mx-auto">
       <DynamicBackLink review={review} />
       <h2 className="mt-12 text-2xl md:text-4xl font-semibold text-scooter-800 dark:text-scooter-50">
         {review?.title}
@@ -72,7 +72,7 @@ const page = async ({ params }: Props) => {
       <small className=" font-light">
         {new Date(review?.publishedAt).toDateString()}
       </small>
-      <div className="my-8 rounded-md overflow-hidden">
+      <div className=" my-8 rounded-md overflow-hidden ">
         <img src={posterUrl} alt={review?.poster.alt} />
       </div>
       {review.head && <QuickSynopsis head={review.head} heart={review.heart} />}

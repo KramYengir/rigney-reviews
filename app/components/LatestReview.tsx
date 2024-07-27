@@ -36,7 +36,7 @@ const LatestReview = async ({ format }: Props) => {
   const posterUrl = urlForImage(latestReview?.poster);
 
   return (
-    <section className="grid my-12 py-2 ">
+    <section className="sm:max-w-[90%] mx-auto grid my-12 py-2 ">
       <div className="flex justify-between items-center mb-2">
         <h2 className="uppercase md:text-lg">Latest {format} Review</h2>
         <small className=" text-xs font-normal">
@@ -45,7 +45,7 @@ const LatestReview = async ({ format }: Props) => {
       </div>
       <Link
         href={`/${latestReview.format}/${latestReview.slug.current}`}
-        className="mb-3 rounded-md overflow-hidden hover:outline hover:outline-scooter-600 dark:hover:outline-scooter-50"
+        className=" mb-3 rounded-md overflow-hidden hover:outline hover:outline-scooter-600 dark:hover:outline-scooter-50"
       >
         <img src={posterUrl} alt={latestReview.poster.alt} />
       </Link>
