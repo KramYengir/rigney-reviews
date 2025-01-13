@@ -36,7 +36,7 @@ const LatestReview = async ({ format }: Props) => {
   const posterUrl = urlForImage(latestReview?.poster);
 
   return (
-    <section className="sm:max-w-screen-lg grid my-12 py-2 ">
+    <section className="sm:max-w-[80%] grid my-12 py-2 ">
       <div className="flex justify-between items-center mb-2">
         <h2 className="uppercase md:text-lg">Latest {format} Review</h2>
         <small className=" text-xs font-normal">
