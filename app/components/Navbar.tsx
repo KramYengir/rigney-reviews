@@ -20,14 +20,15 @@ const Navbar = () => {
   return (
     <header>
       <nav className="flex justify-between items-center mx-auto max-w-5xl px-6 py-2 border-b border-slate-300">
-        <Link href={"/"} className="flex items-center text-4xl tracking-wider">
+        <Link href={"/"} className="flex text-4xl tracking-wider">
           <div className=" max-w-8 mr-1">
             <Image
               src={rrLogoBlue}
               alt="logo in the shape of a film reel "
             ></Image>
           </div>
-          <span className=" text-scooter-600 font-bold">R</span>Reviews
+          <span className=" text-scooter-600 font-bold">R</span>
+          Reviews
         </Link>
         {/* Mobile Nav */}
         <button className="md:hidden z-50 text-xl" onClick={toggleMenu}>
