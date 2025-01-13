@@ -118,7 +118,7 @@ const TV_QUERY = `*[_type == "review" && format == 'tv'] | order(publishedAt des
   publishedAt,
   format 
 }`;
-const MASTERPIECES_QUERY = `*[_type == "review" && count(tags[@->name in ["masterpiece"]]) > 0 ]{
+const MASTERPIECES_QUERY = `*[_type == "review" && count(tags[@->name in ["masterpiece"]]) > 0 ] | order(publishedAt desc){
   _id,
   title,
   slug,
@@ -131,7 +131,7 @@ const MASTERPIECES_QUERY = `*[_type == "review" && count(tags[@->name in ["maste
   publishedAt,
   format 
 }`;
-const HIDDEN_GEMS_QUERY = `*[_type == "review" && count(tags[@->name in ["hidden gem"]]) > 0 ]{
+const HIDDEN_GEMS_QUERY = `*[_type == "review" && count(tags[@->name in ["hidden gem"]]) > 0 ] | order(publishedAt desc){
   _id,
   slug,
   title,
