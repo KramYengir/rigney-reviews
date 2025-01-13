@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Hanken_Grotesk } from "next/font/google";
+import { Hanken_Grotesk, Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "../components/Navbar";
 import Provider from "../utils/Provider";
@@ -38,6 +38,11 @@ const gantari = Hanken_Grotesk({
   weight: ["200", "300", "400", "500", "700"],
   subsets: ["latin"],
 });
+const inter = Inter({
+  display: "swap",
+  weight: ["200", "300", "400", "500", "700"],
+  subsets: ["latin"],
+});
 
 export default function RootLayout({
   children,
@@ -48,29 +53,23 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning className="scroll-smooth">
       <head>
         <link
+          rel="icon"
+          type="image/png"
+          href="/favicon-96x96.png"
+          sizes="96x96"
+        />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <link rel="shortcut icon" href="/favicon.ico" />
+        <link
           rel="apple-touch-icon"
-          sizes="76x76"
+          sizes="180x180"
           href="/apple-touch-icon.png"
         />
-        <link
-          rel="icon"
-          type="image/png"
-          sizes="32x32"
-          href="/favicon-32x32.png"
-        />
-        <link
-          rel="icon"
-          type="image/png"
-          sizes="16x16"
-          href="/favicon-16x16.png"
-        />
+        <meta name="apple-mobile-web-app-title" content="RigneyReviews" />
         <link rel="manifest" href="/site.webmanifest" />
-        <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
-        <meta name="msapplication-TileColor" content="#da532c" />
-        <meta name="theme-color" content="#ffffff"></meta>
       </head>
       <body
-        className={`${gantari.className} flex flex-col  min-h-screen leading-relaxed bg-neutral-50 text-scooter-950 dark:bg-scooter-950 dark:text-scooter-50`}
+        className={`${inter.className} flex flex-col  min-h-screen leading-relaxed bg-neutral-50 text-scooter-950 dark:bg-gradient-to-b dark:from-stone-900 dark:to-scooter-950 dark:text-scooter-50`}
       >
         <Provider>
           <Navbar />
