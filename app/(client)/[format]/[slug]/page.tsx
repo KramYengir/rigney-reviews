@@ -66,16 +66,18 @@ const page = async ({ params }: Props) => {
   return (
     <article className="grid pt-2 pb-10 sm:max-w-[90%] mx-auto">
       <DynamicBackLink review={review} />
-      <h2 className="mt-12 text-2xl md:text-4xl font-semibold text-scooter-800 dark:text-scooter-50">
+      <h1 className="mt-12 text-2xl md:text-4xl font-semibold text-scooter-800 dark:text-scooter-50">
         {review?.title}
-      </h2>
+      </h1>
       <small className=" font-light">
         {new Date(review?.publishedAt).toDateString()}
       </small>
       <div className=" my-8 rounded-md overflow-hidden ">
         <img src={posterUrl} alt={review?.poster.alt} />
       </div>
-      {review.head && <QuickSynopsis head={review.head} heart={review.heart} />}
+      {review.head && review.heart && (
+        <QuickSynopsis head={review.head} heart={review.heart} />
+      )}
       <hr className="mt-4 mb-6 border-b border-slate-300" />
       <div className="leading-relaxed max-w-2xl text-scooter-900 dark:text-scooter-50">
         <PortableText

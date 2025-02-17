@@ -68,9 +68,9 @@ const page = async ({ params }: Props) => {
     <article className="grid sm:max-w-[90%] mx-auto pt-2 pb-10">
       <DynamicBackLink review={review} />
 
-      <h2 className="mt-12 text-2xl md:text-4xl font-semibold text-scooter-800 dark:text-scooter-50">
+      <h1 className="mt-12 text-2xl md:text-4xl font-semibold text-scooter-800 dark:text-scooter-50">
         {review?.title}
-      </h2>
+      </h1>
       <small className=" font-light">
         {new Date(review?.publishedAt).toDateString()}
       </small>

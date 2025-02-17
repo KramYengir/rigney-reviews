@@ -1,7 +1,6 @@
 import { notFound } from "next/navigation";
 import FilterBar from "@/app/components/FilterBar";
 import LatestReview from "@/app/components/LatestReview";
-import ReviewCard from "@/app/components/ReviewCard";
 import Reviews from "@/app/components/Reviews";
 import Review from "@/app/interfaces/ReviewType";
 import { getReviewsByFormat } from "@/app/utils/Queries";
@@ -49,11 +48,21 @@ const FilterPage = async ({ params }: Props) => {
   }
 
   let reviews: Review[] = await getReviewsByFormat(params.format);
-  console.log("FORMATTTTTT:", params.format);
+
+  // Capitalize the first letter of each word
+  const capitalizeWords = (str: string) => {
+    return str
+      .split(" ")
+      .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+      .join(" ");
+  };
+
+  let h1Text = `Rigney Reviews - ${capitalizeWords(params.format)} Reviews`;
 
   return (
     <>
       <FilterBar />
+      <h1 className="sr-only">{h1Text}</h1>
       <LatestReview format={params.format} />
       <Reviews reviews={reviews} format={params.format} />
     </>
